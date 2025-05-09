@@ -1,0 +1,38 @@
+{
+	"name": "vue-wade-admin",
+	"version": "1.0.0",
+	"author": {
+		"name": "wade",
+		"email": "853925809@qq.com",
+		"url": "https://gitee.com/wangdachuia/wadv-admin"
+	},
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo-run dev",
+		"serve": "turbo run dev",
+		"clean": "turbo run clean",
+		"lint": "turbo run lint",
+		"api": "pnpm -F @wade/api run dev",
+		"backend": "pnpm -F @wade/backend run dev",
+		"check": "biome check --write",
+		"format": "biome format --write",
+		"check-types": "turbo run check-types",
+		"postinstall": "pnpm -r run stub --if-present",
+		"preinstall": "npx only-allow pnpm"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.15.3",
+		"@vue/tsconfig": "^0.7.0",
+		"@wade/tsconfig": "workspace:^",
+		"@wade/turbo-run": "workspace:^",
+		"turbo": "^2.5.3",
+		"typescript": "5.8.2",
+		"unbuild": "^3.5.0"
+	},
+	"packageManager": "pnpm@9.0.0",
+	"engines": {
+		"node": ">=18"
+	}
+}

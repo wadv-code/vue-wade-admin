@@ -1,0 +1,67 @@
+{
+  "editor.formatOnSave": true, // 确保保存文件时自动格式化
+  // "biomejsc.lintOnSave": true, // 保存时执行JS/CSS的lint检查（如果支持）
+  // "biome.formatter.enable": true,
+  // "biome.formatter.quoteStyle": "single", // 强制使用单引号
+  // "editor.defaultFormatter": "biomejs.biome", // 设置 Biome 为默认格式化工具
+
+  // 默认格式化使用biome
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  // 在使用搜索功能时，将这些文件夹/文件排除在外
+  "search.searchEditor.singleClickBehaviour": "peekDefinition",
+  "search.followSymlinks": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/*.log": true,
+    "**/*.log*": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/elehukouben": true,
+    "**/.git": true,
+    "**/.github": true,
+    "**/.gitignore": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "**/.vitepress/cache": true,
+    "**/.idea": true,
+    "**/.vscode": false,
+    "**/.yarn": true,
+    "**/tmp": true,
+    "*.xml": true,
+    "out": true,
+    "dist": true,
+    "node_modules": true,
+    "CHANGELOG.md": true,
+    "**/pnpm-lock.yaml": true,
+    "**/yarn.lock": true
+  },
+  // 控制相关文件嵌套展示
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx, $(capture).d.ts",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx,$(capture).d.ts",
+    "*.env": "$(capture).env.*",
+    "README.md": "README*,CHANGELOG*,LICENSE,CNAME",
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json",
+    "tailwind.config.mjs": "postcss.*"
+  },
+  "vue.server.hybridMode": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "archiver",
+    "axios",
+    "dotenv",
+    "isequal",
+    "jspm",
+    "napi",
+    "nolebase",
+    "rollup",
+    "vitest"
+  ]
+}
