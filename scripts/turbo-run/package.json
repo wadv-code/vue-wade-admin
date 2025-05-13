@@ -1,28 +1,28 @@
 {
-	"name": "@wade/turbo-run",
-	"version": "1.0.0",
-	"description": "",
-	"scripts": {
-		"stub": "pnpm unbuild --stub"
-	},
-	"files": ["dist"],
-	"bin": {
-		"turbo-run": "./bin/turbo-run.mjs"
-	},
-	"main": "./dist/index.mjs",
-	"module": "./dist/index.mjs",
-	"exports": {
-		".": {
-			"default": "./dist/index.mjs"
-		},
-		"./package.json": "./package.json"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@wade/node-utils": "workspace:^",
-		"@clack/prompts": "^0.10.1",
-		"cac": "^6.7.14"
-	}
+  "name": "@wade/turbo-run",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "stub": "pnpm unbuild --stub"
+  },
+  "files": ["dist"],
+  "bin": {
+    "turbo-run": "./bin/turbo-run.mjs"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wade/node-utils": "workspace:^",
+    "@clack/prompts": "^0.10.1",
+    "cac": "^6.7.14"
+  }
 }

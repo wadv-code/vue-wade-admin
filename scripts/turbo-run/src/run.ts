@@ -1,55 +1,55 @@
-import { execaCommand, getPackages } from "@wade/node-utils";
+import { execaCommand, getPackages } from '@wade/node-utils';
 
-import { cancel, isCancel, select } from "@clack/prompts";
+import { cancel, isCancel, select } from '@clack/prompts';
 
 interface RunOptions {
-	command?: string;
+  command?: string;
 }
 
 export async function run(options: RunOptions) {
-	const { command } = options;
-	if (!command) {
-		console.error("Please enter the command to run");
-		process.exit(1);
-	}
-	const { packages } = await getPackages();
-	// const appPkgs = await findApps(process.cwd(), packages);
-	// const websitePkg = packages.find(
-	//   (item) => item.packageJson.name === '@wade/website',
-	// );
+  const { command } = options;
+  if (!command) {
+    console.error('Please enter the command to run');
+    process.exit(1);
+  }
+  const { packages } = await getPackages();
+  // const appPkgs = await findApps(process.cwd(), packages);
+  // const websitePkg = packages.find(
+  //   (item) => item.packageJson.name === '@wade/website',
+  // );
 
-	// 只显示有对应命令的包
-	const selectPkgs = packages.filter((pkg) => {
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		return (pkg?.packageJson as Record<string, any>)?.scripts?.[command];
-	});
+  // 只显示有对应命令的包
+  const selectPkgs = packages.filter((pkg) => {
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    return (pkg?.packageJson as Record<string, any>)?.scripts?.[command];
+  });
 
-	let selectPkg: string | symbol;
-	if (selectPkgs.length > 1) {
-		selectPkg = await select({
-			message: `Select the app you need to run [${command}]:`,
-			options: selectPkgs.map((item) => ({
-				label: item?.packageJson.name,
-				value: item?.packageJson.name,
-			})),
-		});
+  let selectPkg: string | symbol;
+  if (selectPkgs.length > 1) {
+    selectPkg = await select({
+      message: `Select the app you need to run [${command}]:`,
+      options: selectPkgs.map((item) => ({
+        label: item?.packageJson.name,
+        value: item?.packageJson.name,
+      })),
+    });
 
-		if (isCancel(selectPkg) || !selectPkg) {
-			cancel("👋 Has cancelled");
-			process.exit(0);
-		}
-	} else {
-		selectPkg = selectPkgs[0]?.packageJson?.name ?? "";
-	}
+    if (isCancel(selectPkg) || !selectPkg) {
+      cancel('👋 Has cancelled');
+      process.exit(0);
+    }
+  } else {
+    selectPkg = selectPkgs[0]?.packageJson?.name ?? '';
+  }
 
-	if (!selectPkg) {
-		console.error("No app found");
-		process.exit(1);
-	}
+  if (!selectPkg) {
+    console.error('No app found');
+    process.exit(1);
+  }
 
-	execaCommand(`pnpm --filter=${selectPkg} run ${command}`, {
-		stdio: "inherit",
-	});
+  execaCommand(`pnpm --filter=${selectPkg} run ${command}`, {
+    stdio: 'inherit',
+  });
 }
 
 /**

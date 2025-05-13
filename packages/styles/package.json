@@ -1,0 +1,19 @@
+{
+  "name": "@wade/styles",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.5",
+    "tw-animate-css": "^1.2.9"
+  }
+}
