@@ -13,7 +13,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-
     /* modules */
     "module": "ESNext",
     "isolatedModules": true,

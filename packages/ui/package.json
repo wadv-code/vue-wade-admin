@@ -1,41 +1,45 @@
 {
   "name": "@wade/ui",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
   "type": "module",
+  "private": false,
+  "scripts": {
+    "#stub": "pnpm unbuild --stub",
+    "#build": "pnpm unbuild",
+    "#prepublishOnly": "rsbuild build",
+    "rsbuild": "rsbuild build",
+    "dev": "rsbuild dev",
+    "preview": "rsbuild preview"
+  },
   "files": ["dist"],
   "sideEffects": ["**/*.css"],
-  "main": "./src/main.ts",
-  "module": "./src/main.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./src/main.ts",
-      "development": "./src/main.ts",
-      "default": "./src/main.ts",
-      "//default": "./dist/main.mjs"
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./src/index.ts",
+      "//default": "./dist/index.ts"
     }
   },
   "publishConfig": {
     "exports": {
       ".": {
-        "default": "./src/main.ts"
+        "default": "./src/index.ts"
       }
     }
   },
-  "scripts": {
-    "build": "pnpm unbuild",
-    "prepublishOnly": "rsbuild build",
-    "#build": "rsbuild build",
-    "dev": "rsbuild dev",
-    "preview": "rsbuild preview"
-  },
   "dependencies": {
     "@vueuse/core": "^13.1.0",
+    "@wade/styles": "workspace:^",
     "@wade/utils": "workspace:^",
     "class-variance-authority": "^0.7.1",
     "lucide-vue-next": "^0.508.0",
     "reka-ui": "^2.2.1",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-sonner": "^1.3.2"
   },
   "bundledDependencies": ["@wade/tailwind-config"],
   "devDependencies": {

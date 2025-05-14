@@ -6,9 +6,7 @@ export default defineBuildConfig({
   entries: [
     {
       builder: 'mkdist',
-      input: './src',
-
-      pattern: ['**/*'],
+      input: './src/index.ts',
     },
     {
       builder: 'mkdist',
