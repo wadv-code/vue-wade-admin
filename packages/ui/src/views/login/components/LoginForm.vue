@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, Card, CardContent, Input, Label } from '../../components'
+import { Button, Card, CardContent, Input, Label } from '../../../components'
 </script>
 
 <template>
@@ -73,7 +73,7 @@ import { Button, Card, CardContent, Input, Label } from '../../components'
           </div>
         </form>
         <div class="relative hidden bg-muted md:block">
-          <img src="../../assets//svg/placeholder.svg" alt="Image"
+          <img src="@/assets//svg/placeholder.svg" alt="Image"
             class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale">
         </div>
       </CardContent>
