@@ -3,6 +3,7 @@ import {
   createWebHashHistory,
   createWebHistory,
 } from 'vue-router';
+import { routes } from './modules';
 
 const viteBase = '';
 const hashHistory = 'hash';
@@ -16,13 +17,7 @@ const router = createRouter({
       ? createWebHashHistory(viteBase)
       : createWebHistory(viteBase),
   // 应该添加到路由的初始路由列表。
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import('@/views/home/HomeView.vue'),
-    },
-  ],
+  routes,
   scrollBehavior: (to, _from, savedPosition) => {
     if (savedPosition) return savedPosition;
     return to.hash ? { behavior: 'smooth', el: to.hash } : { left: 0, top: 0 };

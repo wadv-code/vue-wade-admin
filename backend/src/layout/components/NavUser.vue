@@ -15,7 +15,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '../../components'
+} from '@wade/ui';
 import {
   BadgeCheck,
   Bell,

@@ -7,7 +7,7 @@ export const containerClass = 'w-full h-full'
 
 <script setup lang="ts">
 import AppSidebar from './components/AppSidebar.vue';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Separator, SidebarInset, SidebarProvider, SidebarTrigger } from '../components'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Separator, SidebarInset, SidebarProvider, SidebarTrigger } from '@wade/ui'
 </script>
 
 <template>

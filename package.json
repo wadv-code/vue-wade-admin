@@ -4,7 +4,7 @@
   "author": {
     "name": "wade",
     "email": "853925809@qq.com",
-    "url": "https://gitee.com/wangdachuia/wadv-admin"
+    "url": "https://github.com/wadv-code/vue-wade-admin"
   },
   "private": true,
   "scripts": {
@@ -21,20 +21,25 @@
     "postinstall": "pnpm -r run stub --if-present",
     "preinstall": "npx only-allow pnpm"
   },
+  "workspaces": [
+    "apps/*",
+    "backend/*",
+    "packages/*"
+  ],
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@rsbuild/core": "^1.3.15",
     "@types/node": "^22.15.3",
     "@vue/tsconfig": "^0.7.0",
-    "@wade/tailwind-config": "workspace:^",
+    "@wade/postcss-config": "workspace:^",
     "@wade/tsconfig": "workspace:^",
     "@wade/turbo-run": "workspace:^",
+    "@wade/utils": "workspace:^",
     "turbo": "^2.5.3",
     "typescript": "5.8.2",
-    "unbuild": "^3.5.0",
-    "unplugin-vue-components": "^28.5.0"
+    "unbuild": "^3.5.0"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.10.0",
   "engines": {
     "node": ">=18"
   }

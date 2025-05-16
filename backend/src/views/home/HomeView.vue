@@ -1,49 +1,18 @@
 <script setup lang="ts">
-import {
-  Button,
-  Checkbox,
-  Label,
-  Switch,
-  ThemeDark,
-  Toaster,
-  toast,
-} from '@wade/ui';
-
-const openToast = () => {
-  toast('Event has been created', {
-    description: 'Sunday, December 03, 2023 at 9:00 AM',
-    action: {
-      label: 'Undo',
-      onClick: () => console.log('Undo'),
-    },
-  });
-};
+import { Button, ThemeDark } from '@wade/ui';
 </script>
 <template>
-  <div class="flex justify-center relative min-h-screen">
-    <Toaster />
-    <div class="absolute left-auto top-5/12 text-center w-5/12">
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
-      <div class="flex items-center my-2 justify-center">
-        <Switch id="switch-mode" />
-        <Label class="ml-1" for="switch-mode">Switch Mode</Label>
-      </div>
-      <div class="flex items-center my-2 justify-center">
-        <Checkbox id="checkbox-mode" />
-        <Label class="ml-1" for="checkbox-mode">Checkbox Mode</Label>
-      </div>
-      <div class="flex items-center my-2 justify-center">
-        <Button @click="openToast">OPEN TOAST</Button>
-      </div>
-      <ThemeDark #="{ toggle, isDark }">
-        <Button @click="toggle">切换{{ isDark ? '浅色' : '深色' }}</Button>
-      </ThemeDark>
-    </div>
-    <ThemeDark #="{ toggle }">
-      <Button @click="toggle" class="absolute left-5 top-5">动画跟随鼠标</Button>
-      <Button @click="toggle" class="absolute right-5 top-5">动画跟随鼠标</Button>
-      <Button @click="toggle" class="absolute left-5 bottom-5">动画跟随鼠标</Button>
-      <Button @click="toggle" class="absolute right-5 bottom-5">动画跟随鼠标</Button>
+  <div class=" relative w-full h-full">
+    <RouterLink to="/work">
+      <Button>去工作台</Button>
+    </RouterLink>
+
+
+    <ThemeDark #="{ toggle, dark }">
+      <Button @click="toggle" class="ml-2">{{ dark ? '深色模式' : '浅色模式' }}</Button>
+      <Button @click="toggle" class="absolute right-0 top-0">动画根据鼠标位置</Button>
+      <Button @click="toggle" class="absolute right-0 bottom-0">动画根据鼠标位置</Button>
+      <Button @click="toggle" class="absolute left-0 bottom-0">动画根据鼠标位置</Button>
     </ThemeDark>
   </div>
 </template>

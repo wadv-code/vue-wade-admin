@@ -46,5 +46,5 @@ function toggleTheme(event: MouseEvent) {
 }
 </script>
 <template>
-  <slot :toggle="toggleTheme" :is-dark="isDark" />
+  <slot :toggle="toggleTheme" :dark="isDark" />
 </template>

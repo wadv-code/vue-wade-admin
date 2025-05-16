@@ -1,7 +1,6 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginVue } from '@rsbuild/plugin-vue';
-// import Components from 'unplugin-vue-components/rspack';
-// import { ShadcnVueResolver } from 'unplugin-vue-components/resolvers';
+import path from 'node:path';
 
 export default defineConfig({
   plugins: [pluginVue()],
@@ -10,5 +9,10 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+  },
+  resolve: {
+    alias: {
+      '@repo/ui': path.resolve(__dirname, '../packages/ui'),
+    },
   },
 });

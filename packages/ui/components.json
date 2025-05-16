@@ -13,7 +13,7 @@
     "components": "@/components",
     "composables": "@/composables",
     "utils": "@wade/utils",
-    "ui": "../",
+    "ui": "@/components/ui",
     "lib": "@wade/utils"
   },
   "iconLibrary": "lucide"

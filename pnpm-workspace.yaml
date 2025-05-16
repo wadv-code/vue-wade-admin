@@ -1,5 +1,11 @@
 packages:
-  - "apps/*"
-  - "scripts/*"
-  - "packages/*"
-  - "backend"
+  - apps/*
+  - scripts/*
+  - packages/*
+  - backend
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - '@tailwindcss/oxide'
+  - core-js
+  - esbuild
+  - vue-demi

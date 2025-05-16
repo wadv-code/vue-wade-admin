@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, Card, CardContent, Input, Label, ThemeDark } from '../../../components'
+import { Button, Card, CardContent, Input, Label, ThemeDark } from '@wade/ui'
 </script>
 
 <template>

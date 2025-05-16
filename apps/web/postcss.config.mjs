@@ -1,1 +1,1 @@
-export { default } from '@wade/tailwind-config/postcss';
+export { default } from '@wade/postcss-config';
