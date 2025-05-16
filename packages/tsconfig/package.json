@@ -5,10 +5,6 @@
   "license": "MIT",
   "type": "module",
   "files": [
-    "base.json",
-    "library.json",
-    "node.json",
-    "web-app.json",
-    "web.json"
+    "base.json"
   ]
 }

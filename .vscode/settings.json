@@ -1,10 +1,18 @@
 {
-  "editor.formatOnSave": true, // 确保保存文件时自动格式化
-  // "biomejsc.lintOnSave": true, // 保存时执行JS/CSS的lint检查（如果支持）
+  // 注入tailwindcss4提示
+  "tailwindCSS.experimental.configFile": "packages/styles/src/css/tailwind.css",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  // 确保保存文件时自动格式化
+  "editor.formatOnSave": true,
+  // 保存时执行JS/CSS的lint检查（如果支持）
+  // "biomejsc.lintOnSave": true,
   // "biome.formatter.enable": true,
-  // "biome.formatter.quoteStyle": "single", // 强制使用单引号
-  // "editor.defaultFormatter": "biomejs.biome", // 设置 Biome 为默认格式化工具
-
+  // 强制使用单引号
+  // "biome.formatter.quoteStyle": "single",
+  // 设置 Biome 为默认格式化工具
+  "editor.defaultFormatter": "biomejs.biome",
   // 默认格式化使用biome
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -48,8 +56,7 @@
     "*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx,$(capture).d.ts",
     "*.env": "$(capture).env.*",
     "README.md": "README*,CHANGELOG*,LICENSE,CNAME",
-    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json",
-    "tailwind.config.mjs": "postcss.*"
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json"
   },
   "vue.server.hybridMode": true,
   "typescript.tsdk": "node_modules/typescript/lib",
@@ -63,5 +70,8 @@
     "nolebase",
     "rollup",
     "vitest"
-  ]
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }

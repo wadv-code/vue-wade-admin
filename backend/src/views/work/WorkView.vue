@@ -11,11 +11,14 @@ const openToast = () => {
 };
 </script>
 <template>
-  <div>
+  <div class="relative w-full h-full">
     <Toaster />
     <RouterLink to="/">
-      <Button>去首页</Button>
+      <Button>to Home</Button>
     </RouterLink>
-    <Button class="ml-2" @click="openToast">提示消息</Button>
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white px-2 rounded-md">
+      Workbench
+    </div>
+    <Button class="ml-2" @click="openToast">Toast</Button>
   </div>
 </template>

@@ -2,6 +2,7 @@ packages:
   - apps/*
   - scripts/*
   - packages/*
+  - docs
   - backend
 onlyBuiltDependencies:
   - '@biomejs/biome'

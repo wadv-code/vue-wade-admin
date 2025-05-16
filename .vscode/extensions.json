@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    // Vue 3 的语言支持
+    "Vue.volar",
+    // 将 tailwindcss 集成到 VS Code 中。
+    "bradlc.vscode-tailwindcss",
+    // lint and format
+    "biomejs.biome"
+  ],
+  "unwantedRecommendations": [
+    // 和 volar 冲突
+    "octref.vetur"
+  ]
+}
