@@ -1,13 +1,8 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -15,6 +10,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  useSidebar,
 } from '@wade/ui';
 import {
   BadgeCheck,
@@ -23,24 +22,24 @@ import {
   CreditCard,
   LogOut,
   Sparkles,
-} from 'lucide-vue-next'
+} from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
+const router = useRouter();
 
 defineProps<{
   user: {
-    name: string
-    email: string
-    avatar: string
-  }
-}>()
+    name: string;
+    email: string;
+    avatar: string;
+  };
+}>();
 
-const { isMobile } = useSidebar()
+const { isMobile } = useSidebar();
 
 const logout = () => {
-  router.replace('/login')
-}
-
+  router.replace('/login');
+};
 </script>
 
 <template>

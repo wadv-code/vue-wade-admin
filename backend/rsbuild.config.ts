@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   server: {
-    base: '/wade',
+    // base: '/wade',
     port: 5173,
   },
 });

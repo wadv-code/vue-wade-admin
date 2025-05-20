@@ -12,20 +12,20 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@wade/ui';
-import { ChevronRight, type LucideIcon } from 'lucide-vue-next'
+import { ChevronRight, type LucideIcon } from 'lucide-vue-next';
 
 defineProps<{
   items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
+    title: string;
+    url: string;
+    icon?: LucideIcon;
+    isActive?: boolean;
     items?: {
-      title: string
-      url: string
-    }[]
-  }[]
-}>()
+      title: string;
+      url: string;
+    }[];
+  }[];
+}>();
 </script>
 
 <template>

@@ -1,5 +1,4 @@
 import { dirname } from 'node:path';
-
 import {
   getPackages as getPackagesFunc,
   getPackagesSync as getPackagesSyncFunc,

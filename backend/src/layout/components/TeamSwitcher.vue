@@ -12,20 +12,20 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@wade/ui';
-import { ChevronsUpDown, Plus } from 'lucide-vue-next'
+import { ChevronsUpDown, Plus } from 'lucide-vue-next';
 
-import { type Component, ref } from 'vue'
+import { type Component, ref } from 'vue';
 
 const props = defineProps<{
   teams: {
-    name: string
-    logo: Component
-    plan: string
-  }[]
-}>()
+    name: string;
+    logo: Component;
+    plan: string;
+  }[];
+}>();
 
-const { isMobile } = useSidebar()
-const activeTeam = ref(props.teams[0])
+const { isMobile } = useSidebar();
+const activeTeam = ref(props.teams[0]);
 </script>
 
 <template>

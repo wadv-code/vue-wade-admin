@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { cn } from '@wade/utils'
-import { Skeleton } from '../skeleton'
-import { computed, type HTMLAttributes } from 'vue'
+import { cn } from '@wade/utils';
+import { type HTMLAttributes, computed } from 'vue';
+import { Skeleton } from '../skeleton';
 
 const props = defineProps<{
-  showIcon?: boolean
-  class?: HTMLAttributes['class']
-}>()
+  showIcon?: boolean;
+  class?: HTMLAttributes['class'];
+}>();
 
 const width = computed(() => {
   return `${Math.floor(Math.random() * 40) + 50}%`;
-})
+});
 </script>
 
 <template>

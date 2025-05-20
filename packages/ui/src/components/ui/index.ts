@@ -15,3 +15,7 @@ export * from './breadcrumb';
 export * from './avatar';
 export * from './collapsible';
 export * from './card';
+export * from './tabs';
+export * from './toggle';
+export * from './toggle-group';
+export * from './dialog';

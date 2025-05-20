@@ -1,7 +1,8 @@
-import { defineConfig } from 'vitepress';
 import mdItCustomAttrs from 'markdown-it-custom-attrs';
+import { defineConfig } from 'vitepress';
 
-import { zhSearch } from './language';
+import { zhSearch } from './language/index.mts';
+import { head, pwa } from './pwa.mts';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,6 +10,8 @@ export default defineConfig({
   description: '企业级管理系统框架',
   srcDir: 'src',
   base: '/docs/',
+  head: head(),
+  pwa: pwa(),
   markdown: {
     preConfig: (md) => {
       // use more markdown-it plugins!

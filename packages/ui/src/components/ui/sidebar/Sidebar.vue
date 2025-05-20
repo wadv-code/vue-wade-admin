@@ -1,20 +1,26 @@
 <script setup lang="ts">
-import type { SidebarProps } from '.'
-import { cn } from '@wade/utils'
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '../sheet'
-import { SIDEBAR_WIDTH_MOBILE, useSidebar } from './utils'
+import { cn } from '@wade/utils';
+import type { SidebarProps } from '.';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from '../sheet';
+import { SIDEBAR_WIDTH_MOBILE, useSidebar } from './utils';
 
 defineOptions({
   inheritAttrs: false,
-})
+});
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   side: 'left',
   variant: 'sidebar',
   collapsible: 'offcanvas',
-})
+});
 
-const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
+const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 </script>
 
 <template>

@@ -20,6 +20,16 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  // 排除node_modules引入提示
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "javascript.suggestionActions.enabled": false,
   // 在使用搜索功能时，将这些文件夹/文件排除在外
   "search.searchEditor.singleClickBehaviour": "peekDefinition",
   "search.followSymlinks": false,
@@ -73,5 +83,11 @@
   ],
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }

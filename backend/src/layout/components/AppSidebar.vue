@@ -1,5 +1,12 @@
 <script setup lang="ts">
-
+import type { SidebarProps } from '@wade/ui';
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+} from '@wade/ui';
 import {
   AudioWaveform,
   BookOpen,
@@ -7,21 +14,19 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
-  Map as SetMap,
   PieChart,
+  Map as SetMap,
   Settings2,
   SquareTerminal,
-} from 'lucide-vue-next'
+} from 'lucide-vue-next';
 import NavMain from './NavMain.vue';
 import NavProjects from './NavProjects.vue';
 import NavUser from './NavUser.vue';
 import TeamSwitcher from './TeamSwitcher.vue';
-import type { SidebarProps } from '@wade/ui';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@wade/ui';
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: 'icon',
-})
+});
 
 // This is sample data.
 const data = {
@@ -151,7 +156,7 @@ const data = {
       icon: SetMap,
     },
   ],
-}
+};
 </script>
 
 <template>

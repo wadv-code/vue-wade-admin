@@ -19,17 +19,17 @@ import {
   type LucideIcon,
   MoreHorizontal,
   Trash2,
-} from 'lucide-vue-next'
+} from 'lucide-vue-next';
 
 defineProps<{
   projects: {
-    name: string
-    url: string
-    icon: LucideIcon
-  }[]
-}>()
+    name: string;
+    url: string;
+    icon: LucideIcon;
+  }[];
+}>();
 
-const { isMobile } = useSidebar()
+const { isMobile } = useSidebar();
 </script>
 
 <template>

@@ -31,7 +31,6 @@ export async function run(options: RunOptions) {
         hint: item?.packageJson['description'],
       })),
     });
-
     if (isCancel(projectPkg) || !projectPkg) {
       cancel('👋 Operation cancelled');
       process.exit(0);

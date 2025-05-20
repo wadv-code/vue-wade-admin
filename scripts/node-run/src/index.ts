@@ -1,6 +1,6 @@
+import { colors, consola } from '@wade/node-utils';
 import { cac } from 'cac';
 import { run } from './run';
-import { colors, consola } from '@wade/node-utils';
 
 try {
   const turboRun = cac('node-run');

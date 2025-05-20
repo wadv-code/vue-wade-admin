@@ -29,7 +29,6 @@
     "@wade/node-run": "workspace:^",
     "@wade/postcss-config": "workspace:^",
     "@wade/tsconfig": "workspace:^",
-    "@wade/utils": "workspace:^",
     "tailwindcss": "^4.1.7",
     "turbo": "^2.5.3",
     "typescript": "5.8.2",

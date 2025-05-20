@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { useDark, useToggle } from '@vueuse/core';
+import { useDark, useFullscreen, useToggle } from '@vueuse/core';
 import { nextTick } from 'vue';
 
 const isDark = useDark();
 
 const toggleDark = useToggle(isDark);
+const { isFullscreen, toggle: toggleFullscreen } = useFullscreen();
 
 function toggleTheme(event: MouseEvent) {
   const isAppearanceTransition =
@@ -46,5 +47,5 @@ function toggleTheme(event: MouseEvent) {
 }
 </script>
 <template>
-  <slot :toggle="toggleTheme" :dark="isDark" />
+  <slot :toggle="toggleTheme" :dark="isDark" :fullscreen="isFullscreen" :toggle-fullscreen="toggleFullscreen" />
 </template>
