@@ -1,8 +1,14 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import { router } from './router';
-import '@wade/styles';
+async function initApplication() {
+  // loading
+  // startGlobalLoading();
+  const namespace = 'wade-app';
+  // 启动应用并挂载
+  // vue应用主要逻辑及视图
+  const { bootstrap } = await import('./bootstrap');
+  await bootstrap(namespace);
 
-const app = createApp(App);
-app.use(router);
-app.mount('#root');
+  // 移除并销毁loading
+  // unmountGlobalLoading();
+}
+
+initApplication();

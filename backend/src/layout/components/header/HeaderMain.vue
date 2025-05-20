@@ -1,19 +1,6 @@
 <script setup lang="ts">
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
   Button,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
   Separator,
   SidebarTrigger,
   ThemeDark,
@@ -28,11 +15,10 @@ import {
   Settings2,
   Sun,
 } from 'lucide-vue-next';
-import { ref } from 'vue';
 import SearchMenu from './SearchMenu.vue';
-
-const notice = ref(false);
-const position = ref('zh');
+import HeaderNotice from './HeaderNotice.vue';
+import HeaderLanguage from './HeaderLanguage.vue';
+import HeaderBreadcrumb from './HeaderBreadcrumb.vue';
 </script>
 <template>
   <header
@@ -40,56 +26,29 @@ const position = ref('zh');
     <div class="flex grow items-center gap-2 px-4">
       <SidebarTrigger class="-ml-1" />
       <Separator orientation="vertical" class="h-4" />
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem class="hidden md:block">
-            <BreadcrumbLink href="#">
-              Building Your Application
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator class="hidden md:block" />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+      <HeaderBreadcrumb />
     </div>
     <ThemeDark #="{ dark, fullscreen, toggleFullscreen, toggle }">
       <SearchMenu />
       <Button variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
         <Settings2 />
       </Button>
-      <DropdownMenu>
-        <DropdownMenuTrigger as-child>
-          <Button variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
-            <Languages />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent class="w-56">
-          <DropdownMenuLabel>Panel Language</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuRadioGroup v-model="position">
-            <DropdownMenuRadioItem value="en">
-              英文
-            </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="zh">
-              简体中文
-            </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="ZH">
-              繁体中文
-            </DropdownMenuRadioItem>
-          </DropdownMenuRadioGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <HeaderLanguage>
+        <Button variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
+          <Languages />
+        </Button>
+      </HeaderLanguage>
       <Button @click="toggleFullscreen" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
         <component :is="fullscreen ? Minimize : Maximize" />
       </Button>
       <Button @click="toggle" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
         <component :is="dark ? MoonStar : Sun" />
       </Button>
-      <Button @click="notice = !notice" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
-        <component :is="notice ? BellRing : Bell" />
-      </Button>
+      <HeaderNotice #="{ toggle, open }">
+        <Button @click="toggle" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
+          <component :is="open ? BellRing : Bell" />
+        </Button>
+      </HeaderNotice>
     </ThemeDark>
   </header>
 </template>

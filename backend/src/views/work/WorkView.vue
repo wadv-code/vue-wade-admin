@@ -34,9 +34,9 @@ const openToast = () => {
     </RouterLink>
     <div
       class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white px-10 py-5 rounded-md">
-      Workbench
+      {{ $t('page.auth.login') }}
     </div>
-    <Button class="ml-2" @click="openToast">Toast</Button>
+    <Button class="ml-2" @click="openToast">{{ $t('common.toast') }}</Button>
     <Tabs default-value="account" class="w-[400px] mt-2">
       <TabsList class="grid w-full grid-cols-2">
         <TabsTrigger value="account">

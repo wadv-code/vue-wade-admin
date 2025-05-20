@@ -77,7 +77,7 @@ onMounted(() => {
         class="md:bg-accent group flex h-7 cursor-pointer items-center gap-3 rounded-2xl border-none bg-none px-2 py-0.5 outline-none">
         <Search class="text-muted-foreground group-hover:text-foreground size-4 group-hover:opacity-100" />
         <span class="text-muted-foreground group-hover:text-foreground hidden text-xs duration-300 md:block">
-          搜索
+          {{ $t('common.search') }}
         </span>
         <span v-if="enableShortcutKey"
           class="bg-background border-foreground/60 text-muted-foreground group-hover:text-foreground relative hidden rounded-sm rounded-r-xl px-1.5 py-1 text-xs leading-none group-hover:opacity-100 md:block">
@@ -92,7 +92,7 @@ onMounted(() => {
         <DialogTitle>
           <div class="flex items-center">
             <Search class="text-muted-foreground mr-2 size-4" />
-            <input ref="searchInputRef" v-model="keyword" placeholder="请输入关键字搜索"
+            <input ref="searchInputRef" v-model="keyword" :placeholder="$t('common.searchKeyword')"
               class="ring-none placeholder:text-muted-foreground w-[80%] rounded-md border border-none bg-transparent p-2 pl-0 text-sm font-normal outline-none ring-0 ring-offset-transparent focus-visible:ring-transparent" />
           </div>
         </DialogTitle>
@@ -108,14 +108,14 @@ onMounted(() => {
           <Input id="link" default-value="https://shadcn-vue.com/docs/installation" read-only />
         </div>
         <Button type="submit" size="sm" class="px-3">
-          <span class="sr-only">Copy</span>
+          <span class="sr-only">{{ $t('common.copy') }}</span>
           <Copy class="w-4 h-4" />
         </Button>
       </div>
       <DialogFooter class="sm:justify-start">
         <DialogClose as-child>
           <Button type="button" variant="secondary">
-            Close
+            {{ $t('common.close') }}
           </Button>
         </DialogClose>
       </DialogFooter>

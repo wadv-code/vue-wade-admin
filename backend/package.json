@@ -12,6 +12,7 @@
   "dependencies": {
     "@vueuse/core": "^13.1.0",
     "@wade/hooks": "workspace:^",
+    "@wade/locales": "workspace:^",
     "@wade/styles": "workspace:^",
     "@wade/ui": "workspace:^",
     "@wade/utils": "workspace:^",

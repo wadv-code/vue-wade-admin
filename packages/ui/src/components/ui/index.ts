@@ -19,3 +19,4 @@ export * from './tabs';
 export * from './toggle';
 export * from './toggle-group';
 export * from './dialog';
+export * from './popover';

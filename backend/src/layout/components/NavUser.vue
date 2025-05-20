@@ -82,28 +82,28 @@ const logout = () => {
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <Sparkles />
-              Upgrade to Pro
+              {{ $t('common.upgrade') }}
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <BadgeCheck />
-              Account
+              {{ $t('common.account') }}
             </DropdownMenuItem>
             <DropdownMenuItem>
               <CreditCard />
-              Billing
+              {{ $t('common.billing') }}
             </DropdownMenuItem>
             <DropdownMenuItem>
               <Bell />
-              Notifications
+              {{ $t('common.notice') }}
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem @click="logout">
             <LogOut />
-            Log out
+            {{ $t('common.logout') }}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

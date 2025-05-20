@@ -31,9 +31,9 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 // This is sample data.
 const data = {
   user: {
-    name: 'WangJi',
+    name: 'Wade',
     email: '853925809@qq.com',
-    avatar: require('@/assets/image/WangJi.jpg'),
+    avatar: require('@/assets/image/avatar.jpg'),
   },
   teams: [
     {
