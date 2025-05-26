@@ -13,8 +13,8 @@
     }
   },
   "dependencies": {
-    "@manypkg/get-packages": "^3.0.0",
-    "tailwindcss": "^4.1.5",
-    "tw-animate-css": "^1.2.9"
+    "@manypkg/get-packages": "catalog:",
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "catalog:"
   }
 }

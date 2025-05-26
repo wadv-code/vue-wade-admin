@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { loadLocaleMessages, type SupportedLanguagesType } from '@wade/locales';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@wade/ui';
+import { type SupportedLanguagesType, loadLocaleMessages } from '@wade/locales';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@wade/ui';
 import { ref } from 'vue';
 
 const position = ref('zh-CN');
 
 const handleChange = (value: string) => {
   loadLocaleMessages(value as SupportedLanguagesType);
-}
+};
 </script>
 <template>
   <DropdownMenu>

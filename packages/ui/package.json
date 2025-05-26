@@ -29,12 +29,12 @@
     }
   },
   "dependencies": {
-    "@vueuse/core": "^13.2.0",
+    "@vueuse/core": "catalog:",
     "@wade/utils": "workspace:^",
-    "class-variance-authority": "^0.7.1",
-    "lucide-vue-next": "^0.508.0",
-    "reka-ui": "^2.2.1",
-    "vue": "^3.5.13",
-    "vue-sonner": "^1.3.2"
+    "class-variance-authority": "catalog:",
+    "lucide-vue-next": "catalog:",
+    "reka-ui": "catalog:",
+    "vue": "catalog:",
+    "vue-sonner": "catalog:"
   }
 }

@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { router } from './router';
 import { setupI18n } from './locales';
+import { router } from './router';
 // 通用样式
 import '@wade/styles';
 

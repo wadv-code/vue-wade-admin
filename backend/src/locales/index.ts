@@ -1,11 +1,11 @@
-import type { App } from 'vue';
 import {
   $t,
-  setupI18n as coreSetup,
-  type SupportedLanguagesType,
   type LocaleSetupOptions,
+  type SupportedLanguagesType,
   type TypedAny,
+  setupI18n as coreSetup,
 } from '@wade/locales';
+import type { App } from 'vue';
 
 /**
  * Load locale messages

@@ -10,19 +10,19 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "@vueuse/core": "^13.1.0",
+    "@vueuse/core": "catalog:",
     "@wade/hooks": "workspace:^",
     "@wade/locales": "workspace:^",
     "@wade/styles": "workspace:^",
     "@wade/ui": "workspace:^",
     "@wade/utils": "workspace:^",
-    "lucide-vue-next": "^0.508.0",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.1"
+    "lucide-vue-next": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   },
   "devDependencies": {
-    "@rsbuild/core": "^1.3.15",
-    "@rsbuild/plugin-vue": "^1.0.7",
-    "typescript": "^5.8.3"
+    "@rsbuild/core": "catalog:",
+    "@rsbuild/plugin-vue": "catalog:",
+    "typescript": "catalog:"
   }
 }

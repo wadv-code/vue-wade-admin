@@ -1,5 +1,5 @@
-import { unref, type App } from 'vue';
-import { createI18n, type Locale } from 'vue-i18n';
+import { type App, unref } from 'vue';
+import { type Locale, createI18n } from 'vue-i18n';
 import type {
   LoadMessageFn,
   LocaleSetupOptions,

@@ -5,8 +5,8 @@ import { ref } from 'vue';
 const open = ref(false);
 
 const toggle = () => {
-  open.value = !open.value
-}
+  open.value = !open.value;
+};
 </script>
 <template>
   <Popover>

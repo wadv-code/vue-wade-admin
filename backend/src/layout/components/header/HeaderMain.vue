@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import {
-  Button,
-  Separator,
-  SidebarTrigger,
-  ThemeDark,
-} from '@wade/ui';
+import { Button, Separator, SidebarTrigger, ThemeDark } from '@wade/ui';
 import {
   Bell,
   BellRing,
@@ -15,10 +10,10 @@ import {
   Settings2,
   Sun,
 } from 'lucide-vue-next';
-import SearchMenu from './SearchMenu.vue';
-import HeaderNotice from './HeaderNotice.vue';
-import HeaderLanguage from './HeaderLanguage.vue';
 import HeaderBreadcrumb from './HeaderBreadcrumb.vue';
+import HeaderLanguage from './HeaderLanguage.vue';
+import HeaderNotice from './HeaderNotice.vue';
+import SearchMenu from './SearchMenu.vue';
 </script>
 <template>
   <header
