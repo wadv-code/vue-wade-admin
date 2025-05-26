@@ -27,8 +27,8 @@
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
     "lookup": "node ./scripts/lookup.mjs",
     "replace": "node ./scripts/replace.mjs",
-    "reinstall": "pnpm clean-only --del-lock && pnpm install",
     "postinstall": "pnpm -r run stub --if-present",
+    "reinstall": "pnpm clean && pnpm install",
     "clean": "pnpm clean-only --del-lock",
     "clean-only": "node ./scripts/clean.mjs"
   },

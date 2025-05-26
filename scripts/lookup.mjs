@@ -2,6 +2,10 @@ import { startLookup } from '@wade/node-utils';
 
 /**
  * 全局搜索
+ * pnpm lookup --root=查找目录 --reg=查找字符串或者正则
+ * --root=指定查找目录（默认执行根目录）
+ * --reg=指定查找字符串或者正则（注意：--reg=不要头和尾的"/"斜杠）
+ * --delete（加上就会把所有找到的删除掉）
  * @param {string} root 指定根目录
  * @param {string[]} excludes 排除文件
  * @param {ReplaceTargets} targets 搜索集合
@@ -29,7 +33,7 @@ import { startLookup } from '@wade/node-utils';
     //   pattern: "**/*",
     // },
     {
-      name: '正则匹配文件（--reg=不要头和尾得斜杠/）',
+      name: '正则匹配文件（--reg=不要头和尾的"/"）',
       pattern: '**/*',
     },
   ];

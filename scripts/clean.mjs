@@ -7,10 +7,8 @@ import { startClean } from '@wade/node-utils';
  * @param {string[]} targets 替换集合
  */
 (async () => {
-  // 排除文件（作者电脑配置需要排除的一些目录）
+  // 排除文件
   const excludes = [
-    // 排除我本地
-    '**/scripts/node-utils/dist',
     // 排除我的Electron开发包
     '**/projects/Electron/electron-am-win',
     '**/projects/Electron/electron-deployer-win',
