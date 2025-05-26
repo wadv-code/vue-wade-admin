@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 'Wade Admin'
   text: 'Wade快速上手指南'
-  tagline: 基于 Vue3、Pinia、Vite、TypeScript等最新技术栈。
+  tagline: 基于 Vue3、TypeScript、RsBuild、Tailwindcss 4、等最新技术栈构建。
   image:
     src: /dog.svg
     alt: Wade Admin
@@ -20,7 +20,7 @@ hero:
 features:
   - icon: 🚀
     title: 最新技术栈
-    details: 基于 Vue3、Pinia、Vue Router、TypeScript、等最新技术栈。
+    details: 基于 Vue3、RsBuild、Vue Router、TypeScript、等最新技术栈。
     link: /guide/introduction/quick-start
     linkText: 快速开始
   - icon: 🚎

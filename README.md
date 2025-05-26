@@ -5,7 +5,7 @@
   <br>
   <br>
 
-[![license](http://nm.hzwima.com:8100/docs/dog.svg)](LICENSE)
+<!-- [![license](http://nm.hzwima.com:8100/docs/dog.svg)](LICENSE) -->
 
   <h1>Vue Wade Admin</h1>
 </div>

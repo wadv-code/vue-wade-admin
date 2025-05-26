@@ -1,6 +1,6 @@
 {
   "name": "vue-wade-admin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": {
     "name": "wade",
     "email": "853925809@qq.com",
@@ -9,23 +9,28 @@
   "private": true,
   "scripts": {
     "dev": "node-run dev",
+    "build": "node-run build",
     "serve": "turbo run dev",
-    "build": "turbo run build",
-    "clean": "turbo run clean",
+    "build:all": "turbo run build",
     "lint": "turbo run lint",
     "api": "pnpm -F @wade/api run dev",
     "web": "pnpm -F @wade/web run dev",
     "backend": "pnpm -F @wade/backend run dev",
-    "docs": "pnpm -F @wade/docs run dev",
+    "doc": "pnpm -F @wade/docs run dev",
     "check": "biome check --write",
     "format": "biome format --write",
     "check-types": "turbo run check-types",
-    "postinstall": "pnpm -r run stub --if-present",
     "preinstall": "npx only-allow pnpm",
     "update:deps": "npx taze -r -w",
     "catalog": "pnpx codemod pnpm/catalog",
     "changeset": "pnpm exec changeset",
-    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
+    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
+    "lookup": "node ./scripts/lookup.mjs",
+    "replace": "node ./scripts/replace.mjs",
+    "reinstall": "pnpm clean-only --del-lock && pnpm install",
+    "postinstall": "pnpm -r run stub --if-present",
+    "clean": "pnpm clean-only --del-lock",
+    "clean-only": "node ./scripts/clean.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
@@ -34,6 +39,7 @@
     "@types/node": "catalog:",
     "@vue/tsconfig": "catalog:",
     "@wade/node-run": "workspace:^",
+    "@wade/node-utils": "workspace:^",
     "@wade/postcss-config": "workspace:^",
     "@wade/tsconfig": "workspace:^",
     "tailwindcss": "catalog:",
@@ -43,6 +49,6 @@
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

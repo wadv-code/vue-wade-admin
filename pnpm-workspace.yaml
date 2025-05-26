@@ -31,6 +31,7 @@ catalog:
   find-up: ^7.0.0
   lucide-vue-next: ^0.508.0
   markdown-it-custom-attrs: ^1.0.2
+  minimatch: ^10.0.1
   postcss: ^8.5.3
   reka-ui: ^2.2.1
   tailwind-merge: ^3.3.0
