@@ -6,7 +6,9 @@
     "build": "pnpm unbuild",
     "stub": "pnpm unbuild --stub"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {

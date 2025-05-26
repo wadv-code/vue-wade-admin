@@ -22,10 +22,14 @@
     "check-types": "turbo run check-types",
     "postinstall": "pnpm -r run stub --if-present",
     "preinstall": "npx only-allow pnpm",
-    "update:deps": "npx taze -r -w"
+    "update:deps": "npx taze -r -w",
+    "catalog": "pnpx codemod pnpm/catalog",
+    "changeset": "pnpm exec changeset",
+    "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
+    "@changesets/cli": "catalog:",
     "@rsbuild/core": "catalog:",
     "@types/node": "catalog:",
     "@vue/tsconfig": "catalog:",
@@ -37,7 +41,7 @@
     "typescript": "catalog:",
     "unbuild": "catalog:"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": ">=18"
   }
