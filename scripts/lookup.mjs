@@ -33,7 +33,7 @@ import { startLookup } from '@wade/node-utils';
     //   pattern: "**/*",
     // },
     {
-      name: '正则匹配文件（--reg=不要头和尾的"/"）',
+      name: '正则匹配中文名称文件',
       pattern: '**/*',
     },
   ];

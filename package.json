@@ -37,7 +37,6 @@
     "@changesets/cli": "catalog:",
     "@rsbuild/core": "catalog:",
     "@types/node": "catalog:",
-    "@vue/tsconfig": "catalog:",
     "@wade/node-run": "workspace:^",
     "@wade/node-utils": "workspace:^",
     "@wade/postcss-config": "workspace:^",

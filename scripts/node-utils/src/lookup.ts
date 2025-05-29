@@ -38,7 +38,7 @@ function findLookupFiles(
 
       // 检查是否匹配排除模式
       if (shouldExclude(relativePath)) {
-        console.log(`\x1B[2m* Skip: ${relativePath}\x1B[0m`);
+        // console.log(`\x1B[2m* Skip: ${relativePath}\x1B[0m`);
         continue;
       }
 
@@ -84,7 +84,7 @@ async function startLookup(option: StartLookupOptions) {
   const deleteFile = process.argv.includes('--delete');
   console.log('\x1B[46mStarting cleanup.\x1B[0m');
   console.log();
-  console.log(`Root: --root=${rootSrc}`);
+  console.log(`Root: ${rootSrc}`);
   console.log(`Deleted: ${deleteFile}`);
   console.log('Regex:', regex);
 
@@ -92,8 +92,8 @@ async function startLookup(option: StartLookupOptions) {
 
   for (const item of targets) {
     console.log();
-    console.log(`\x1B[36mTargets: ${item.name}\x1B[0m`);
-    console.log(`\x1B[36mRoot: ${item.root || rootSrc}\x1B[0m`);
+    console.log(`\x1B[36mName: ${item.name}\x1B[0m`);
+    console.log(`\x1B[36mTargets: ${item.root || rootSrc}\x1B[0m`);
     console.log();
     const lookupFiles = findLookupFiles(
       item.root || rootSrc,
@@ -101,7 +101,7 @@ async function startLookup(option: StartLookupOptions) {
       item.excludes || excludes,
       item.pattern,
     );
-    // console.log('中文文件:', lookupFiles);
+    // console.log('查找到的文件:', lookupFiles);
     results.push(...lookupFiles);
     console.log(`\x1B[36m\nEnding: ${lookupFiles.length} files\n\x1B[0m`);
   }
@@ -112,13 +112,9 @@ async function startLookup(option: StartLookupOptions) {
       await fs.rm(itemPath, { force: true, recursive: true });
       console.log(`\x1B[31m- Deleted: ${itemPath}\x1B[0m`);
     }
-    console.log(
-      `\x1B[31m\nThe Deleted process completed a total of ${results.length} files\n\x1B[0m`,
-    );
+    console.log(`\x1B[31m\nDelete the ${results.length} hit files\n\x1B[0m`);
   } else {
-    console.log(
-      `\x1B[33m\nThe Lookup process completed a total of ${results.length} files\n\x1B[0m`,
-    );
+    console.log(`\x1B[33m\nLookup the ${results.length} hit files\n\x1B[0m`);
   }
 }
 

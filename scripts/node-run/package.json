@@ -24,8 +24,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wade/node-utils": "workspace:^",
     "@clack/prompts": "catalog:",
+    "@wade/node-utils": "workspace:^",
     "cac": "catalog:"
   }
 }

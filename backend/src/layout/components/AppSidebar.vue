@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import type { SidebarProps } from '@wade/ui';
 import {
   Sidebar,
@@ -29,7 +30,7 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 });
 
 // This is sample data.
-const data = {
+const data = ref({
   user: {
     name: 'Wade',
     email: '853925809@qq.com',
@@ -156,7 +157,7 @@ const data = {
       icon: SetMap,
     },
   ],
-};
+});
 </script>
 
 <template>
