@@ -10,13 +10,9 @@
   "scripts": {
     "dev": "node-run dev",
     "build": "node-run build",
-    "serve": "turbo run dev",
+    "dev:all": "turbo run dev",
     "build:all": "turbo run build",
     "lint": "turbo run lint",
-    "api": "pnpm -F @wade/api run dev",
-    "web": "pnpm -F @wade/web run dev",
-    "backend": "pnpm -F @wade/backend run dev",
-    "doc": "pnpm -F @wade/docs run dev",
     "check": "biome check --write",
     "format": "biome format --write",
     "check-types": "turbo run check-types",
@@ -27,10 +23,9 @@
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
     "lookup": "node ./scripts/lookup.mjs",
     "replace": "node ./scripts/replace.mjs",
+    "clean": "node ./scripts/clean.mjs --del-lock",
     "postinstall": "pnpm -r run stub --if-present",
-    "reinstall": "pnpm clean && pnpm install",
-    "clean": "pnpm clean-only --del-lock",
-    "clean-only": "node ./scripts/clean.mjs"
+    "reinstall": "pnpm clean && pnpm install"
   },
   "devDependencies": {
     "@biomejs/biome": "catalog:",
