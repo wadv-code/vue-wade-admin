@@ -1,14 +1,14 @@
-import { dirname, join, normalize } from 'node:path';
-import { minimatch } from 'minimatch';
 import {
   copyFile,
   existsSync,
   lstatSync,
   mkdirSync,
-  readdirSync,
   readFileSync,
+  readdirSync,
   writeFileSync,
 } from 'node:fs';
+import { dirname, join, normalize } from 'node:path';
+import { minimatch } from 'minimatch';
 import type {
   ReplaceTarget,
   ReplaceTargets,

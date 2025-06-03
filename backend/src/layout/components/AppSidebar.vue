@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import type { SidebarProps } from '@wade/ui';
 import {
   Sidebar,
@@ -20,6 +19,7 @@ import {
   Settings2,
   SquareTerminal,
 } from 'lucide-vue-next';
+import { ref } from 'vue';
 import NavMain from './NavMain.vue';
 import NavProjects from './NavProjects.vue';
 import NavUser from './NavUser.vue';

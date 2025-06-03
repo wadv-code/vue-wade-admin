@@ -1,7 +1,7 @@
-import { join, normalize, relative } from 'node:path';
 import { existsSync, readdirSync, statSync } from 'node:fs';
-import { minimatch } from 'minimatch';
 import { promises as fs } from 'node:fs';
+import { join, normalize, relative } from 'node:path';
+import { minimatch } from 'minimatch';
 import type { StartLookupOptions } from './type';
 
 /**

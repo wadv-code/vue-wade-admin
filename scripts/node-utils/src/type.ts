@@ -1,6 +1,5 @@
-
 export interface TypedString {
-  [key: string]: string
+  [key: string]: string;
 }
 
 export interface ReplaceTarget {
@@ -46,5 +45,3 @@ export interface StartCleanOptions {
   excludes: string[];
   root?: string;
 }
-
-
