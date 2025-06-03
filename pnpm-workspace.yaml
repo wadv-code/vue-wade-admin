@@ -18,7 +18,7 @@ catalog:
   "@rsbuild/core": ^1.3.22
   "@rsbuild/plugin-vue": ^1.0.7
   "@tailwindcss/postcss": ^4.1.8
-  "@types/node": ^22.15.24
+  "@types/node": ^22.15.29
   "@vite-pwa/vitepress": ^1.0.0
   "@vueuse/core": ^13.3.0
   cac: ^6.7.14
@@ -35,8 +35,8 @@ catalog:
   reka-ui: ^2.3.0
   tailwind-merge: ^3.3.0
   tailwindcss: ^4.1.8
-  turbo: ^2.5.3
-  tw-animate-css: ^1.3.2
+  turbo: ^2.5.4
+  tw-animate-css: ^1.3.3
   typescript: ^5.8.3
   unbuild: ^3.5.0
   vitepress: ^1.6.3

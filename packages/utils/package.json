@@ -2,18 +2,11 @@
   "name": "@wade/utils",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "stub": "pnpm unbuild --stub"
-  },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./src/index.ts",
       "development": "./src/index.ts",
-      "default": "./dist/index.mjs"
+      "default": "./src/index.ts"
     }
   },
   "license": "ISC",

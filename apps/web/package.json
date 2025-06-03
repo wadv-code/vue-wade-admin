@@ -11,6 +11,7 @@
   "dependencies": {
     "@wade/styles": "workspace:^",
     "@wade/ui": "workspace:^",
+    "@wade/utils": "workspace:^",
     "vue": "catalog:"
   },
   "devDependencies": {

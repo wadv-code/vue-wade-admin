@@ -35,18 +35,16 @@
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@changesets/cli": "catalog:",
-    "@rsbuild/core": "catalog:",
     "@types/node": "catalog:",
     "@wade/node-run": "workspace:^",
     "@wade/node-utils": "workspace:^",
     "@wade/postcss-config": "workspace:^",
     "@wade/tsconfig": "workspace:^",
-    "tailwindcss": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:",
     "unbuild": "catalog:"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": ">=20"
   }
