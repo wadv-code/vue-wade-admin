@@ -10,11 +10,11 @@
   <h1>Vue Wade Admin</h1>
 </div>
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wadejs_vue-wade-admin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=wadejs_vue-wade-admin) ![codeql](https://github.com/wadejs/vue-wade-admin/actions/workflows/codeql.yml/badge.svg) ![build](https://github.com/wadejs/vue-wade-admin/actions/workflows/build.yml/badge.svg) ![ci](https://github.com/wadejs/vue-wade-admin/actions/workflows/ci.yml/badge.svg) ![deploy](https://github.com/wadejs/vue-wade-admin/actions/workflows/deploy.yml/badge.svg)
+<!-- [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wadejs_vue-wade-admin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=wadejs_vue-wade-admin) ![codeql](https://github.com/wadejs/vue-wade-admin/actions/workflows/codeql.yml/badge.svg) ![build](https://github.com/wadejs/vue-wade-admin/actions/workflows/build.yml/badge.svg) ![ci](https://github.com/wadejs/vue-wade-admin/actions/workflows/ci.yml/badge.svg) ![deploy](https://github.com/wadejs/vue-wade-admin/actions/workflows/deploy.yml/badge.svg) -->
 
 ## 简介
 
-Vue Wade Admin 是 Vue Wade Admin 的升级版本。作为一个免费开源的中后台模板，它采用了最新的 Vue 3、RsBuild、TypeScript 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
+Vue Wade Admin 是 Wadv Admin 的升级版本。作为一个免费开源的中后台模板，它采用了最新的 Vue 3、RsBuild、TypeScript 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
 
 ## 升级提示
 
@@ -34,17 +34,17 @@ Vue Wade Admin 是 Vue Wade Admin 的升级版本。作为一个免费开源的�
 
 测试账号：wade/123456
 
-<div align="center">
+<!-- <div align="center">
   <img alt="WadeAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview1.png">
   <img alt="WadeAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview2.png">
   <img alt="WadeAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview3.png">
-</div>
+</div> -->
 
 ### 使用 Gitpod
 
 在 Gitpod（适用于 GitHub 的免费在线开发环境）中打开项目，并立即开始编码。
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/wadejs/vue-wade-admin)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/wadv-code/vue-wade-admin)
 
 ## 文档
 
@@ -55,7 +55,7 @@ Vue Wade Admin 是 Vue Wade Admin 的升级版本。作为一个免费开源的�
 1. 获取项目代码
 
 ```bash
-git clone https://github.com/wadejs/vue-wade-admin.git
+git clone https://github.com/wadv-code/vue-wade-admin.git
 ```
 
 2. 安装依赖
@@ -69,6 +69,12 @@ corepack enable
 
 # 安装依赖
 pnpm install
+
+# 重新安装依赖
+pnpm reinstall
+
+# 卸载依赖
+pnpm clean
 ```
 
 ::: tip 注意
@@ -96,30 +102,35 @@ pnpm build
 ```bash
 │
 ◆  Select the app you need to run [dev]:
-│  ● @wade/web
+│  ● @wade/api
+│  ○ @wade/web
 │  ○ @wade/backend
 │  ○ @wade/docs
 └
 ```
 
-现在，你可以在浏览器访问 `http://localhost:5173` 查看项目。
+## 项目说明
+
+- `@wade/api` 后端api工程
+- `@wade/web` 前台web端
+- `@wade/backend` 后台web端
+- `@wade/docs` 项目文档工程
+
+现在，你可以在浏览器访问 `http://localhost:3000 (对应端口)` 查看项目。
 
 ### 运行指定项目
 
-如果你不想选择项目，可以直接运行以下命令运行你需要的应用：
+如果你不想选择项目，可以直接运行以下命令全部启动：
 
 ```bash
-pnpm run api
-pnpm run web
-pnpm run backend
-pnpm run docs
+pnpm run serve
 ```
 
 ## 更新日志
 
-[CHANGELOG](https://github.com/wadejs/vue-wade-admin/releases)
+[CHANGELOG](https://github.com/wadv-code/vue-wade-admin/releases)
 
-## 如何贡献
+<!-- ## 如何贡献
 
 非常欢迎你的加入！[提一个 Issue](https://github.com/wadv-code/vue-wade-admin/issues/new/choose) 或者提交一个 Pull Request。
 
@@ -129,9 +140,9 @@ pnpm run docs
 2. 创建自己的分支：`git checkout -b feature/xxxx`
 3. 提交你的修改：`git commit -am 'feat(function): add xxxxx'`
 4. 推送您的分支：`git push origin feature/xxxx`
-5. 提交 `pull request`
+5. 提交 `pull request` -->
 
-## Git 贡献提交规范
+<!-- ## Git 贡献提交规范
 
 参考 [vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) 规范 ([Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular))
 
@@ -145,7 +156,7 @@ pnpm run docs
 - `docs` 文档/注释
 - `chore` 依赖更新/脚手架配置修改等
 - `ci` 持续集成
-- `types` 类型定义文件更改
+- `types` 类型定义文件更改 -->
 
 ## 浏览器支持
 
@@ -159,30 +170,8 @@ pnpm run docs
 
 ## 维护者
 
-[@Wade](https://github.com/anncwb)
-
-## Star 历史
-
-[![Star History Chart](https://api.star-history.com/svg?repos=wadejs/vue-wade-admin&type=Date)](https://star-history.com/#wadejs/vue-wade-admin&Date)
-
-## 捐赠
-
-如果你觉得这个项目对你有帮助，你可以帮作者买一杯咖啡表示支持！
-
-![donate](https://unpkg.com/@wadejs/static-source@0.1.7/source/sponsor.png)
-
-<a style="display: block;width: 100px;height: 50px;line-height: 50px; color: #fff;text-align: center; background: #408aed;border-radius: 4px;" href="https://www.paypal.com/paypalme/cvwade">Paypal Me</a>
-
-## 贡献者
-
-<a href="https://github.com/wadejs/vue-wade-admin/graphs/contributors">
-  <img alt="Contributors" src="https://opencollective.com/wadejs/contributors.svg?button=false" />
-</a>
-
-## Discord
-
-- [Github Discussions](https://github.com/wadv-code/vue-wade-admin/discussions)
+[@Wade](https://github.com/wadv-code)
 
 ## 许可证
 
-[MIT © Wade-2020](./LICENSE)
+[MIT © Wade-2025](./LICENSE)

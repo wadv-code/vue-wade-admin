@@ -43,7 +43,7 @@ export async function run(options: RunOptions) {
     console.error('👋 No project found');
     process.exit(1);
   } else {
-    outro("You're all set!");
+    outro('You have completed your selection.');
   }
 
   execaCommand(`pnpm --filter=${projectPkg} run ${command}`, {
