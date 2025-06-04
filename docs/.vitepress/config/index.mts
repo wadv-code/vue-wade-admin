@@ -61,4 +61,9 @@ export default defineConfig({
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
   },
+  vite: {
+    server: {
+      port: 4173,
+    },
+  },
 });
