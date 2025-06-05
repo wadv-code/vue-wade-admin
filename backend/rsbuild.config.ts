@@ -14,6 +14,12 @@ export default defineConfig(({ env }) => {
     server: {
       base: env === 'development' ? '' : '/wade',
       port: 5173,
+      proxy: {
+        '/api': {
+          target: process.env.BASE_REQUEST_API,
+          changeOrigin: true,
+        },
+      },
     },
   };
 });

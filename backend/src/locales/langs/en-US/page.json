@@ -8,6 +8,10 @@
     "sendingCode": "SMS Code is sending...",
     "codeSentTo": "Code has been sent to {0}"
   },
+  "home": {
+    "evil": "Evil Corp.",
+    "acme": "Acme Corp."
+  },
   "dashboard": {
     "title": "Dashboard",
     "analytics": "Analytics",

@@ -43,12 +43,12 @@ const data = ref({
       plan: 'Enterprise',
     },
     {
-      name: 'Acme Corp.',
+      name: 'page.home.acme',
       logo: AudioWaveform,
       plan: 'Startup',
     },
     {
-      name: 'Evil Corp.',
+      name: 'page.home.evil',
       logo: Command,
       plan: 'Free',
     },

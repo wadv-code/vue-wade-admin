@@ -41,7 +41,7 @@ const activeTeam = ref(props.teams[0]);
             </div>
             <div class="grid flex-1 text-left text-sm leading-tight">
               <span class="truncate font-semibold">
-                {{ activeTeam.name }}
+                {{ $t(activeTeam.name) }}
               </span>
               <span class="truncate text-xs">{{ activeTeam.plan }}</span>
             </div>
@@ -58,7 +58,7 @@ const activeTeam = ref(props.teams[0]);
             <div class="flex size-6 items-center justify-center rounded-sm border">
               <component :is="team.logo" class="size-4 shrink-0" />
             </div>
-            {{ team.name }}
+            {{ $t(team.name) }}
             <DropdownMenuShortcut>⌘{{ index + 1 }}</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuSeparator />

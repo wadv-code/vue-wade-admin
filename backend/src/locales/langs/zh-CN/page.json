@@ -8,6 +8,10 @@
     "sendingCode": "正在发送验证码",
     "codeSentTo": "验证码已发送至{0}"
   },
+  "home": {
+    "evil": "牛马公司",
+    "acme": "Acme公司"
+  },
   "dashboard": {
     "title": "概览",
     "analytics": "分析页",

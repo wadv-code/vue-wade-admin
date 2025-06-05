@@ -9,8 +9,8 @@
 
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { TransformInterceptor } from './core/transform.interceptor';
 import { AppModule } from './app.module';
+import { TransformInterceptor } from './core/transform.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

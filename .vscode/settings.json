@@ -22,6 +22,7 @@
   },
   // 排除node_modules引入提示
   "files.exclude": {
+    "node_modules": true,
     "**/node_modules": true,
     "**/.git": true,
     "**/.svn": true,
@@ -34,6 +35,7 @@
   "search.searchEditor.singleClickBehaviour": "peekDefinition",
   "search.followSymlinks": false,
   "search.exclude": {
+    "node_modules": true,
     "**/node_modules": true,
     "**/*.log": true,
     "**/*.log*": true,
@@ -53,12 +55,10 @@
     "*.xml": true,
     "out": true,
     "dist": true,
-    "node_modules": true,
     "CHANGELOG.md": true,
     "**/pnpm-lock.yaml": true,
     "**/yarn.lock": true
   },
-
   // 项目语言相关
   "i18n-ally.localesPaths": [
     "packages/locales/src/langs",
@@ -72,7 +72,6 @@
   "i18n-ally.keystyle": "nested",
   "i18n-ally.sortKeys": true,
   "i18n-ally.namespace": true,
-
   // 控制相关文件嵌套展示
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,

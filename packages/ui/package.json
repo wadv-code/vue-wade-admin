@@ -29,6 +29,7 @@
     }
   },
   "dependencies": {
+    "@tanstack/vue-table": "^8.21.3",
     "@vueuse/core": "catalog:",
     "@wade/utils": "workspace:^",
     "class-variance-authority": "catalog:",

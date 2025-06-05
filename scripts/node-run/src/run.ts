@@ -1,4 +1,4 @@
-import { cancel, intro, isCancel, outro, select } from '@clack/prompts';
+import { cancel, intro, isCancel, multiselect, outro } from '@clack/prompts';
 import { colors, execaCommand, getPackages } from '@wade/node-utils';
 
 interface RunOptions {
@@ -19,10 +19,10 @@ export async function run(options: RunOptions) {
     return (pkg?.packageJson as Record<string, any>)?.scripts?.[command];
   });
 
-  let projectPkg: string | symbol;
+  let projectPkg: symbol | string[];
   if (projectPkgs.length > 1) {
     intro(colors.inverse(`Start run ${command}`));
-    projectPkg = await select({
+    projectPkg = await multiselect({
       message: `Pick a project run [${command}]:`,
       options: projectPkgs.map((item) => ({
         label: item?.packageJson.name,
@@ -31,22 +31,24 @@ export async function run(options: RunOptions) {
         hint: item?.packageJson['description'],
       })),
     });
-    if (isCancel(projectPkg) || !projectPkg) {
+    if (isCancel(projectPkg) || !projectPkg || !projectPkg.length) {
       cancel('👋 Operation cancelled');
       process.exit(0);
     }
   } else {
-    projectPkg = projectPkgs[0]?.packageJson?.name ?? '';
+    projectPkg = [projectPkgs[0]?.packageJson?.name ?? ''];
   }
 
-  if (!projectPkg) {
+  if (!projectPkg || !projectPkg.length) {
     console.error('👋 No project found');
     process.exit(1);
   } else {
     outro('You have completed your selection.');
   }
 
-  execaCommand(`pnpm --filter=${projectPkg} run ${command}`, {
+  const projectCommand = projectPkg.map((pkg) => `--filter=${pkg}`).join(' ');
+
+  execaCommand(`pnpm serve ${projectCommand}`, {
     stdio: 'inherit',
   });
 }
