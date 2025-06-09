@@ -18,6 +18,18 @@ function findMonorepoRoot(cwd: string = process.cwd()) {
 }
 
 /**
+ * 查找所有前端目录
+ * @param cwd
+ */
+function findWebRoot(cwd: string = process.cwd()) {
+  const lockFile = findUpSync('index.html', {
+    cwd,
+    type: 'file',
+  });
+  return dirname(lockFile || '');
+}
+
+/**
  * 获取大仓的所有包
  */
 function getPackagesSync() {
@@ -42,4 +54,10 @@ async function getPackage(pkgName: string) {
   return packages.find((pkg) => pkg.packageJson.name === pkgName);
 }
 
-export { findMonorepoRoot, getPackage, getPackages, getPackagesSync };
+export {
+  findMonorepoRoot,
+  findWebRoot,
+  getPackage,
+  getPackages,
+  getPackagesSync,
+};

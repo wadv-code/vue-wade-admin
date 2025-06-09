@@ -8,13 +8,28 @@
     "sendingCode": "SMS Code is sending...",
     "codeSentTo": "Code has been sent to {0}"
   },
+  "button": {
+    "toHome": "to Home",
+    "toWork": "to Workbench"
+  },
   "home": {
     "evil": "Evil Corp.",
-    "acme": "Acme Corp."
+    "acme": "Acme Corp.",
+    "welfare": "Welfare company",
+    "generator": "Generator in one-click.",
+    "idGenerator": "Generator a ID",
+    "idRegular": "Regular ID",
+    "uuidGenerator": "Generate a UUID",
+    "generateRegular": "Generate a regular ID",
+    "generatorUuid": "Generator your UUID in one-click.",
+    "yearNumber": "Generate a year ID"
   },
   "dashboard": {
     "title": "Dashboard",
     "analytics": "Analytics",
     "workspace": "Workspace"
+  },
+  "tips": {
+    "menu": "Menu"
   }
 }

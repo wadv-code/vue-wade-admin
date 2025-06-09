@@ -4,18 +4,16 @@ import { useIsMobile } from '@wade/hooks';
 import {
   Button,
   Dialog,
+  DialogTitle,
   DialogClose,
-  DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
-  Input,
-  Label,
+  DialogContent,
+  DialogDescription,
 } from '@wade/ui';
 import { isWindowsOs } from '@wade/utils';
-import { Copy, Search } from 'lucide-vue-next';
+import { Search, MenuSquare } from 'lucide-vue-next';
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const { isMobile } = useIsMobile();
@@ -34,12 +32,14 @@ const keyword = ref('');
 const searchInputRef = ref<HTMLInputElement>();
 const cmd = isWindowsOs() ? keys['ctrl+k'] : keys['cmd+k'];
 
-whenever(cmd, () => {
+// 观察cmd真实值
+cmd && whenever(cmd, () => {
   if (props.enableShortcutKey) {
     open.value = !open.value;
   }
 });
 
+// 观察open真实值
 whenever(open, () => {
   nextTick(() => {
     searchInputRef.value?.focus();
@@ -96,21 +96,14 @@ onMounted(() => {
               class="ring-none placeholder:text-muted-foreground w-[80%] rounded-md border border-none bg-transparent p-2 pl-0 text-sm font-normal outline-none ring-0 ring-offset-transparent focus-visible:ring-transparent" />
           </div>
         </DialogTitle>
-        <DialogDescription>
-          Anyone who has this link will be able to view this.
-        </DialogDescription>
+        <DialogDescription>{{ $t('common.toggleMenu') }}</DialogDescription>
       </DialogHeader>
-      <div class="flex items-center space-x-2 h-52">
-        <div class="grid flex-1 gap-2">
-          <Label for="link" class="sr-only">
-            Link
-          </Label>
-          <Input id="link" default-value="https://shadcn-vue.com/docs/installation" read-only />
+      <div class="max-h-64 overflow-y-auto">
+        <div v-for="n in 100" :key="n"
+          class="p-2 flex items-center justify-between cursor-pointer border-1 border-sidebar-border rounded-md mb-1 hover:bg-primary-foreground">
+          <span>{{ $t('page.tips.menu') + n }}</span>
+          <MenuSquare />
         </div>
-        <Button type="submit" size="sm" class="px-3">
-          <span class="sr-only">{{ $t('common.copy') }}</span>
-          <Copy class="w-4 h-4" />
-        </Button>
       </div>
       <DialogFooter class="sm:justify-start">
         <DialogClose as-child>

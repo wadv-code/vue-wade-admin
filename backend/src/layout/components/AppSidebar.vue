@@ -38,7 +38,12 @@ const data = ref({
   },
   teams: [
     {
-      name: 'Acme Inc',
+      name: 'page.home.evil',
+      logo: Command,
+      plan: 'Free',
+    },
+    {
+      name: 'page.home.welfare',
       logo: GalleryVerticalEnd,
       plan: 'Enterprise',
     },
@@ -46,11 +51,6 @@ const data = ref({
       name: 'page.home.acme',
       logo: AudioWaveform,
       plan: 'Startup',
-    },
-    {
-      name: 'page.home.evil',
-      logo: Command,
-      plan: 'Free',
     },
   ],
   navMain: [

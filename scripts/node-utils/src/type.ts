@@ -37,6 +37,7 @@ export interface StartLookupOptions {
   targets: ReplaceTargets;
   excludes: string[];
   root?: string;
+  log?: boolean;
 }
 
 // 删除参数

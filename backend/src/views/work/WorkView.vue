@@ -30,7 +30,7 @@ const openToast = () => {
   <div class="relative w-full h-full">
     <Toaster />
     <RouterLink to="/">
-      <Button>to Home</Button>
+      <Button>{{ $t('page.button.toHome') }}</Button>
     </RouterLink>
     <div
       class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white px-10 py-5 rounded-md">

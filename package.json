@@ -21,6 +21,7 @@
     "catalog": "pnpx codemod pnpm/catalog",
     "changeset": "pnpm exec changeset",
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
+    "proxy": "node ./scripts/proxy.mjs",
     "lookup": "node ./scripts/lookup.mjs",
     "replace": "node ./scripts/replace.mjs",
     "clean": "node ./scripts/clean.mjs --del-lock",

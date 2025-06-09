@@ -73,7 +73,12 @@ function findLookupFiles(
  * ]
  */
 async function startLookup(option: StartLookupOptions) {
-  const { targets = [], excludes = [], root = process.cwd() } = option;
+  const {
+    targets = [],
+    excludes = [],
+    root = process.cwd(),
+    log = true,
+  } = option;
   // 去掉node和文件路径
   const args = process.argv.slice(2);
   const rootPath = args.find((arg) => arg.startsWith('--root'))?.split('=')[1];
@@ -82,19 +87,24 @@ async function startLookup(option: StartLookupOptions) {
   const rootSrc = rootPath ? normalize(rootPath || '') : root;
 
   const deleteFile = process.argv.includes('--delete');
-  console.log('\x1B[46mStarting cleanup.\x1B[0m');
-  console.log();
-  console.log(`Root: ${rootSrc}`);
-  console.log(`Deleted: ${deleteFile}`);
-  console.log('Regex:', regex);
+
+  if (log) {
+    console.log('\x1B[46mStarting cleanup.\x1B[0m');
+    console.log();
+    console.log(`Root: ${rootSrc}`);
+    console.log(`Deleted: ${deleteFile}`);
+    console.log('Regex:', regex);
+  }
 
   const results: string[] = [];
 
   for (const item of targets) {
-    console.log();
-    console.log(`\x1B[36mName: ${item.name}\x1B[0m`);
-    console.log(`\x1B[36mTargets: ${item.root || rootSrc}\x1B[0m`);
-    console.log();
+    if (log) {
+      console.log();
+      console.log(`\x1B[36mName: ${item.name}\x1B[0m`);
+      console.log(`\x1B[36mTargets: ${item.root || rootSrc}\x1B[0m`);
+      console.log();
+    }
     const lookupFiles = findLookupFiles(
       item.root || rootSrc,
       item.regex || regex,
@@ -103,7 +113,9 @@ async function startLookup(option: StartLookupOptions) {
     );
     // console.log('查找到的文件:', lookupFiles);
     results.push(...lookupFiles);
-    console.log(`\x1B[36m\nEnding: ${lookupFiles.length} files\n\x1B[0m`);
+    if (log) {
+      console.log(`\x1B[36m\nEnding: ${lookupFiles.length} files\n\x1B[0m`);
+    }
   }
 
   if (deleteFile) {
@@ -116,6 +128,8 @@ async function startLookup(option: StartLookupOptions) {
   } else {
     console.log(`\x1B[33m\nLookup the ${results.length} hit files\n\x1B[0m`);
   }
+
+  return results;
 }
 
 export { startLookup };

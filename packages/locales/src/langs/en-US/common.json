@@ -16,6 +16,7 @@
   "loadingMenu": "Loading Menu",
   "query": "Search",
   "search": "Search",
+  "toggleMenu": "Please select the menu after searching.",
   "searchKeyword": "Please enter keywords",
   "enabled": "Enabled",
   "disabled": "Disabled",

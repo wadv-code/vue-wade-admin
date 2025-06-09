@@ -5,7 +5,9 @@
   "scripts": {
     "stub": "pnpm unbuild --stub"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -25,7 +27,12 @@
     "chalk": "catalog:",
     "consola": "catalog:",
     "execa": "catalog:",
+    "express": "^5.1.0",
     "find-up": "catalog:",
+    "http-proxy-middleware": "^3.0.5",
     "minimatch": "catalog:"
+  },
+  "devDependencies": {
+    "@types/express": "catalog:"
   }
 }

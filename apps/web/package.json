@@ -1,6 +1,7 @@
 {
   "name": "@wade/web",
   "version": "1.0.0",
+  "description": "RsBuild + vue3 + tailwindcss4 + typescript",
   "private": true,
   "type": "module",
   "scripts": {
