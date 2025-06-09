@@ -27,9 +27,9 @@
     "chalk": "catalog:",
     "consola": "catalog:",
     "execa": "catalog:",
-    "express": "^5.1.0",
+    "express": "catalog:",
     "find-up": "catalog:",
-    "http-proxy-middleware": "^3.0.5",
+    "http-proxy-middleware": "catalog:",
     "minimatch": "catalog:"
   },
   "devDependencies": {

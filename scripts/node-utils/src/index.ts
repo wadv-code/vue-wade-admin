@@ -5,4 +5,5 @@ export * from './monorepo';
 export * from './replace';
 export * from './lookup';
 export * from './clean';
-export * from './proxy';
+export * from './preview';
+export * from './file';

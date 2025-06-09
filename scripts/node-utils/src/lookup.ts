@@ -122,7 +122,7 @@ async function startLookup(option: StartLookupOptions) {
     for (const itemPath of results) {
       // 匹配到目标目录或文件时直接删除
       await fs.rm(itemPath, { force: true, recursive: true });
-      console.log(`\x1B[31m- Deleted: ${itemPath}\x1B[0m`);
+      log && console.log(`\x1B[31m- Deleted: ${itemPath}\x1B[0m`);
     }
     console.log(`\x1B[31m\nDelete the ${results.length} hit files\n\x1B[0m`);
   } else {
