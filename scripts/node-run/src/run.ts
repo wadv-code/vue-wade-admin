@@ -1,4 +1,11 @@
-import { cancel, intro, isCancel, multiselect, outro } from '@clack/prompts';
+import {
+  cancel,
+  intro,
+  isCancel,
+  multiselect,
+  outro,
+  select,
+} from '@clack/prompts';
 import { colors, execaCommand, getPackages } from '@wade/node-utils';
 
 interface RunOptions {

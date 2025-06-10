@@ -50,6 +50,7 @@ catalog:
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   consola: ^3.4.2
+  cross-env: ^7.0.3
   eslint: ^9.28.0
   eslint-config-prettier: ^10.1.5
   eslint-plugin-prettier: ^5.4.1

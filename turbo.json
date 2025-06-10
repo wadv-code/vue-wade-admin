@@ -12,6 +12,14 @@
         ".vitepress/dist/**"
       ]
     },
+    "preview": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "build:analyze": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },

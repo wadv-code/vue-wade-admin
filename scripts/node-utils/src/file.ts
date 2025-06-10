@@ -5,9 +5,9 @@ import {
   readdirSync,
   statSync,
 } from 'node:fs';
+import { promises as fs } from 'node:fs';
 import { join } from 'node:path';
 import { minimatch } from 'minimatch';
-import { promises as fs } from 'node:fs';
 
 /**
  * 复制一个目录的所有文件到另一个目录

@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "rsbuild build",
+    "build:analyze": "cross-env BUNDLE_ANALYZE=true rsbuild build",
     "dev": "rsbuild dev",
     "preview": "rsbuild preview"
   },

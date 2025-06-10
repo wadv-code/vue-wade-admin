@@ -1,6 +1,6 @@
 import { normalize } from 'node:path';
-import type { StartCleanOptions } from './type';
 import { cleanTargetsRecursively } from './file';
+import type { StartCleanOptions } from './type';
 
 /**
  * 全局替换

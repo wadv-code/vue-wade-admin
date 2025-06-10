@@ -4,16 +4,16 @@ import { useIsMobile } from '@wade/hooks';
 import {
   Button,
   Dialog,
-  DialogTitle,
   DialogClose,
-  DialogFooter,
-  DialogHeader,
-  DialogTrigger,
   DialogContent,
   DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from '@wade/ui';
 import { isWindowsOs } from '@wade/utils';
-import { Search, MenuSquare } from 'lucide-vue-next';
+import { MenuSquare, Search } from 'lucide-vue-next';
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 const { isMobile } = useIsMobile();
@@ -33,11 +33,12 @@ const searchInputRef = ref<HTMLInputElement>();
 const cmd = isWindowsOs() ? keys['ctrl+k'] : keys['cmd+k'];
 
 // 观察cmd真实值
-cmd && whenever(cmd, () => {
-  if (props.enableShortcutKey) {
-    open.value = !open.value;
-  }
-});
+cmd &&
+  whenever(cmd, () => {
+    if (props.enableShortcutKey) {
+      open.value = !open.value;
+    }
+  });
 
 // 观察open真实值
 whenever(open, () => {

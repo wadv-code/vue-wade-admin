@@ -1,15 +1,15 @@
+import { basename, dirname, join } from 'node:path';
+import consola from 'consola';
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import { basename, dirname, join } from 'node:path';
-import { startLookup } from './lookup';
+import { colors } from '.';
 import {
   cleanRecursively,
   clearAndCopy,
   filterDistDirs,
   findDistDirs,
 } from './file';
-import consola from 'consola';
-import { colors } from '.';
+import { startLookup } from './lookup';
 
 async function startPreview() {
   const results = await findDistDirs(process.cwd(), [
@@ -21,6 +21,16 @@ async function startPreview() {
   ]);
   // 只保留前端包
   const roots = await filterDistDirs(results, /\.html$/i);
+  if (!roots.length) {
+    consola.log(
+      `  ${colors.red('✘')}  ${colors.yellow('There are currently no packages available for preview.')}`,
+    );
+    consola.log(
+      `  ${colors.green('➜')}  ${colors.green('You can try executing "pnpm install & pnpm build:all".')}`,
+    );
+    console.log();
+    return;
+  }
   consola.log(
     `  ${colors.green('❤')}  ${colors.yellow(`Found ${roots.length} front-end packages.`)}`,
   );

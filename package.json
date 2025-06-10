@@ -9,7 +9,9 @@
   "private": true,
   "scripts": {
     "dev": "node-run dev",
+    "start": "node-run dev --multi",
     "build": "node-run build",
+    "build:analyze": "turbo build:analyze",
     "serve": "turbo run dev",
     "build:all": "turbo run build",
     "lint": "turbo run lint",
@@ -21,8 +23,8 @@
     "catalog": "pnpx codemod pnpm/catalog",
     "changeset": "pnpm exec changeset",
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
-    "preview": "node ./scripts/preview.mjs",
     "lookup": "node ./scripts/lookup.mjs",
+    "preview": "node ./scripts/preview.mjs",
     "replace": "node ./scripts/replace.mjs",
     "clean": "node ./scripts/clean.mjs --del-lock",
     "postinstall": "pnpm -r run stub --if-present",
@@ -36,6 +38,7 @@
     "@wade/node-utils": "workspace:^",
     "@wade/postcss-config": "workspace:^",
     "@wade/tsconfig": "workspace:^",
+    "cross-env": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:",
     "unbuild": "catalog:"

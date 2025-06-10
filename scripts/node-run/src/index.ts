@@ -9,6 +9,7 @@ try {
     .command('[script]')
     .usage('Run turbo interactively.')
     .action(async (command: string) => {
+      console.log('command', command);
       run({ command });
     });
 

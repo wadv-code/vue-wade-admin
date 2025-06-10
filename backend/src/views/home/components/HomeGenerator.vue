@@ -8,12 +8,14 @@ import {
   CardHeader,
   CardTitle,
   Input,
+  toast,
+  Toaster,
 } from '@wade/ui';
 import { makeId, makeUuid, makeYearNumberToString } from '@wade/utils';
-import { RefreshCcw } from 'lucide-vue-next';
+import { Copy, RefreshCcw } from 'lucide-vue-next';
 import { onMounted, reactive } from 'vue';
 
-defineOptions({ name: 'HomeGenerator' })
+defineOptions({ name: 'HomeGenerator' });
 
 const params = reactive({
   id: '',
@@ -39,14 +41,24 @@ const makeProject = () => {
   handleYearNumber();
 };
 
-onMounted(() => {
-  makeProject()
-})
+const openToast = () => {
+  toast('Event has been created', {
+    description: 'Sunday, December 03, 2023 at 9:00 AM',
+    action: {
+      label: 'Undo',
+      onClick: () => console.log('Undo'),
+    },
+  });
+};
 
+onMounted(() => {
+  makeProject();
+});
 </script>
 
 <template>
   <div class="content flex items-center justify-center pt-10">
+    <Toaster />
     <Card class="w-[550px]">
       <CardHeader>
         <CardTitle>{{ $t('page.home.idGenerator') }}</CardTitle>
@@ -54,23 +66,35 @@ onMounted(() => {
       </CardHeader>
       <CardContent>
         <div class="grid items-center w-full gap-4">
-          <div class="flex items-center">
+          <div class="flex items-center gap-1.5">
             <Input v-model="params.id" :placeholder="$t('page.home.generateRegular')" />
-            <Button class="ml-2" @click="handleID">
+            <Button @click="openToast">
+              <span class="sr-only">Copy</span>
+              <Copy />
+            </Button>
+            <Button @click="handleID">
               <RefreshCcw />
               {{ $t('page.home.idGenerator') }}
             </Button>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center gap-1.5">
             <Input v-model="params.uuid" :placeholder="$t('page.home.uuidGenerator')" />
-            <Button class="ml-2" @click="handleUUID">
+            <Button @click="openToast">
+              <span class="sr-only">Copy</span>
+              <Copy />
+            </Button>
+            <Button @click="handleUUID">
               <RefreshCcw />
               {{ $t('page.home.uuidGenerator') }}
             </Button>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center gap-1.5">
             <Input v-model="params.yearNumber" :placeholder="$t('page.home.yearNumber')" />
-            <Button class="ml-2" @click="handleYearNumber">
+            <Button @click="openToast">
+              <span class="sr-only">Copy</span>
+              <Copy />
+            </Button>
+            <Button @click="handleYearNumber">
               <RefreshCcw />
               {{ $t('page.home.yearNumber') }}
             </Button>

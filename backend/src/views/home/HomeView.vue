@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Button, ThemeDark } from '@wade/ui';
 import { MoonStar, Sun } from 'lucide-vue-next';
-import HomeGenerator from './components/HomeGenerator.vue'
+import HomeGenerator from './components/HomeGenerator.vue';
 // interface User {
 //   age?: number;
 //   avatar: number;

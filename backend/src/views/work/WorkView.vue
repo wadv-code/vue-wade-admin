@@ -16,6 +16,7 @@ import {
   Toaster,
   toast,
 } from '@wade/ui';
+
 const openToast = () => {
   toast('Event has been created', {
     description: 'Sunday, December 03, 2023 at 9:00 AM',
