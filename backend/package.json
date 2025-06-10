@@ -21,8 +21,8 @@
     "@wade/ui": "workspace:^",
     "@wade/utils": "workspace:^",
     "lucide-vue-next": "catalog:",
-    "pinia": "^3.0.3",
-    "topbar": "^3.0.0",
+    "pinia": "catalog:",
+    "topbar": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },
