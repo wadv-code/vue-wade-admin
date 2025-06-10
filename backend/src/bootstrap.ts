@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import { setupI18n } from './locales';
 import { router } from './router';
+import { store } from './store';
 // 通用样式
 import '@wade/styles';
 
@@ -12,8 +13,8 @@ async function bootstrap(namespace: string) {
   // 国际化 i18n 配置
   await setupI18n(app);
 
-  // 配置 pinia-tore
-  // await initStores(app, { namespace });
+  // 配置 pinia
+  app.use(store);
 
   // 路由
   app.use(router);

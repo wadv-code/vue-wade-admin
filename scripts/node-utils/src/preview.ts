@@ -9,7 +9,6 @@ import {
   filterDistDirs,
   findDistDirs,
 } from './file';
-import { startLookup } from './lookup';
 
 async function startPreview() {
   const results = await findDistDirs(process.cwd(), [

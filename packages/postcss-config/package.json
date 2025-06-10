@@ -9,10 +9,7 @@
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
-      "*": [
-        "./dist/*",
-        "./*"
-      ]
+      "*": ["./dist/*", "./*"]
     }
   },
   "exports": {
@@ -21,8 +18,7 @@
       "development": "./src/index.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
-    },
-    "./*": "./*"
+    }
   },
   "peerDependencies": {
     "postcss": "catalog:",

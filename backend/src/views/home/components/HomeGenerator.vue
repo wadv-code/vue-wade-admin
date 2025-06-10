@@ -8,8 +8,8 @@ import {
   CardHeader,
   CardTitle,
   Input,
-  toast,
   Toaster,
+  toast,
 } from '@wade/ui';
 import { makeId, makeUuid, makeYearNumberToString } from '@wade/utils';
 import { Copy, RefreshCcw } from 'lucide-vue-next';

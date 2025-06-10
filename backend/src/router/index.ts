@@ -3,6 +3,7 @@ import {
   createWebHashHistory,
   createWebHistory,
 } from 'vue-router';
+import { usePermission } from './permission';
 import { routes } from './modules';
 
 const viteBase = '';
@@ -23,5 +24,8 @@ const router = createRouter({
     return to.hash ? { behavior: 'smooth', el: to.hash } : { left: 0, top: 0 };
   },
 });
+
+// 路由权限控制
+usePermission(router);
 
 export { router };

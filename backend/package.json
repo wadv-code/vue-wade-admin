@@ -12,12 +12,17 @@
   },
   "dependencies": {
     "@vueuse/core": "catalog:",
+    "@wade/core": "workspace:^",
     "@wade/hooks": "workspace:^",
     "@wade/locales": "workspace:^",
+    "@wade/request": "workspace:^",
     "@wade/styles": "workspace:^",
+    "@wade/types": "workspace:^",
     "@wade/ui": "workspace:^",
     "@wade/utils": "workspace:^",
     "lucide-vue-next": "catalog:",
+    "pinia": "^3.0.3",
+    "topbar": "^3.0.0",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },

@@ -13,8 +13,8 @@ import { UserModule } from './user/user.module';
       username: 'root',
       password: '123456',
       database: 'nest_auth',
-      // entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // 生产环境应设为 false
+      // entities: [`${__dirname}/**/*.entity{.ts,.js}`],
+      synchronize: process.env.NODE_ENV === 'development', // 生产环境应设为 false
       autoLoadEntities: true,
     }),
     UserModule,

@@ -55,7 +55,6 @@ export async function run(options: RunOptions) {
     } else {
       outro('You have completed your selection.');
     }
-    console.log('projectPkg', projectPkg);
 
     execaCommand(`pnpm --filter=${projectPkg} run ${command}`, {
       stdio: 'inherit',
