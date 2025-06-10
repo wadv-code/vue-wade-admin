@@ -8,6 +8,7 @@
   },
   "private": true,
   "scripts": {
+    "api": "pnpm -F @wade/api run dev",
     "dev": "node-run dev",
     "start": "node-run start",
     "single": "cross-env BASE_DEV_SINGLE=true node-run dev",

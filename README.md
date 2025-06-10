@@ -14,19 +14,20 @@
 
 ## 简介
 
-Vue Wade Admin 是 Wadv Admin 的升级版本。作为一个免费开源的中后台模板，它采用了最新的 Vue 3、RsBuild、Turborepo、TypeScript、BiomeJs 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
+Vue Wade Admin 是 Wadv Admin 的升级版本。作为一个免费开源的中后台模板，它采用了最新的 Vue 3、RsBuild、Turborepo、TypeScript、BiomeJs、NestJs 等主流技术开发，开箱即用，可用于中后台前端开发，也适合学习参考。
 
 ## 升级提示
 
 该版本为最新版本 `2.0`，与其他版本不兼容，如果你是新项目，建议使用最新版本。如果你想查看旧版本，请使用 [v1](https://github.com/wadv-code/wadv-admin)
+建议node环境>=20。
 
 ## 特性
 
-- **最新技术栈**：使用 Vue3/rsbuild 等前端前沿技术开发
+- **最新技术栈**：使用 Vue3/RsBuild/BiomeJs/Turborepo/NestJs 等前端前沿技术开发
 - **TypeScript**：应用程序级 JavaScript 的语言
-- **RsBuild**：Webpack最新构建工具
-- **BiomeJs**：高性能 linter 检查及格式化工具 [biomejs](https://biomejs.dev/zh-cn/)
-- **Turborepo**：专为‌ Monorepo 而设计，显著加速 Monorepo 的构建、测试和链接等任务‌
+- **RsBuild**：Webpack最新构建工具 [RsBuild](https://rsbuild.rs/zh/)
+- **BiomeJs**：高性能 linter 检查及格式化工具 [BiomeJs](https://biomejs.dev/zh-cn/)
+- **Turborepo**：专为‌ Monorepo 而设计，显著加速 Monorepo 的构建 [Turborepo](https://turborepo.com/docs)
 - **主题**：提供多套主题色彩，可配置自定义主题
 - **国际化**：内置完善的国际化方案
 - **权限**：内置完善的动态路由权限生成方案
@@ -53,6 +54,26 @@ Vue Wade Admin 是 Wadv Admin 的升级版本。作为一个免费开源的中�
 
 [文档地址](https://doc.wade.pro/)
 
+# 快速开始
+
+## 前置准备
+
+::: info 环境要求
+
+在启动项目前，你需要确保你的环境满足以下要求：
+
+- [Node.js](https://nodejs.org/en) 20 及以上版本，推荐使用 [fnm](https://github.com/Schniz/fnm) 或者 [nvm](https://github.com/nvm-sh/nvm) 进行版本管理。
+<!-- - [Git](https://git-scm.com/) 任意版本。 -->
+
+验证你的环境是否满足以上要求，你可以通过以下命令查看版本：
+
+```bash
+# 出现相应 node LTS版本即可
+node -v
+```
+
+:::
+
 ## 安装使用
 
 1. 获取项目代码
@@ -61,7 +82,7 @@ Vue Wade Admin 是 Wadv Admin 的升级版本。作为一个免费开源的中�
 git clone https://github.com/wadv-code/vue-wade-admin.git
 ```
 
-2. 安装依赖
+2.安装依赖
 
 ```bash
 # 进入项目目录
@@ -88,40 +109,52 @@ pnpm clean
 
 :::
 
-3. 多个运行
+3.多个运行
 
 ```bash
 pnpm dev
 ```
 
-4. 单个运行
+4.单个运行
 
 ```bash
 pnpm single
 ```
 
-5. 全部
+5.全部运行
 
 ```bash
 pnpm dev:all
 ```
 
-6. 全部打包
+6.多个打包
 
 ```bash
 pnpm build
 ```
 
-7. 单个打包
+7.单个打包
 
 ```bash
 pnpm build:single
 ```
 
-8. 打包分析（结束后手动前往dist包查看分析html）
+8.全部打包
+
+```bash
+pnpm build:all
+```
+
+9.打包分析（结束后手动前往dist包查看分析html）
 
 ```bash
 pnpm build:analyze
+```
+
+10.后端API（依赖mysql，选装后api中配置mysql账户密码）
+
+```bash
+pnpm api
 ```
 
 此时，你会看到类似如下的输出，选择你需要运行的项目：
@@ -163,14 +196,6 @@ pnpm single
 - `@wade/docs` 项目文档工程
 
 现在，你可以在浏览器访问 `http://localhost:3000 (对应端口)` 查看项目。
-
-### 运行指定项目
-
-如果你不想选择项目，可以直接运行以下命令全部启动：
-
-```bash
-pnpm run dev:all
-```
 
 ## 更新日志
 
