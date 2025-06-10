@@ -9,8 +9,11 @@
   "private": true,
   "scripts": {
     "dev": "node-run dev",
+    "start": "node-run start",
+    "single": "cross-env BASE_DEV_SINGLE=true node-run dev",
     "dev:all": "turbo run dev",
     "build": "node-run build",
+    "build:single": "cross-env BASE_DEV_SINGLE=true node-run build",
     "build:analyze": "turbo build:analyze",
     "build:all": "turbo run build",
     "lint": "turbo run lint",

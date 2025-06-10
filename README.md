@@ -25,7 +25,7 @@ Vue Wade Admin 是 Wadv Admin 的升级版本。作为一个免费开源的中�
 - **最新技术栈**：使用 Vue3/rsbuild 等前端前沿技术开发
 - **TypeScript**：应用程序级 JavaScript 的语言
 - **RsBuild**：Webpack最新构建工具
-- **BiomeJs**：高性能 linter 检查及格式化工具
+- **BiomeJs**：高性能 linter 检查及格式化工具 [biomejs](https://biomejs.dev/zh-cn/)
 - **Turborepo**：专为‌ Monorepo 而设计，显著加速 Monorepo 的构建、测试和链接等任务‌
 - **主题**：提供多套主题色彩，可配置自定义主题
 - **国际化**：内置完善的国际化方案
@@ -88,28 +88,69 @@ pnpm clean
 
 :::
 
-3. 运行
+3. 多个运行
 
 ```bash
 pnpm dev
 ```
 
-4. 打包
+4. 单个运行
+
+```bash
+pnpm single
+```
+
+5. 全部
+
+```bash
+pnpm dev:all
+```
+
+6. 全部打包
 
 ```bash
 pnpm build
 ```
 
-此时，你会看到类似如下的输出，选择你需要运行的项目：
+7. 单个打包
 
 ```bash
+pnpm build:single
+```
+
+8. 打包分析（结束后手动前往dist包查看分析html）
+
+```bash
+pnpm build:analyze
+```
+
+此时，你会看到类似如下的输出，选择你需要运行的项目：
+
+多个
+
+```bash
+pnpm dev
 │
-◆  Select the app you need to run [dev]:
+◆  Pick multiple projects to run [dev]:
 │  ■ @wade/api
 │  □ @wade/mobile
 │  □ @wade/web
 │  ■ @wade/backend
 │  □ @wade/docs
+└
+```
+
+单个
+
+```bash
+pnpm single
+│
+◆  Pick multiple projects to run [single]:
+│  ● @wade/api
+│  ○ @wade/mobile
+│  ○ @wade/web
+│  ○ @wade/backend
+│  ○ @wade/docs
 └
 ```
 
