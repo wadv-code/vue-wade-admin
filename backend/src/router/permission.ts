@@ -21,8 +21,7 @@ export const usePermission = (router: Router) => {
   const whiteList = ['/login', '/error'];
 
   // 路由加载前
-  router.beforeEach(async (to, from, next) => {
-    console.log(from.path);
+  router.beforeEach(async (to, _from, next) => {
     // 显示进度条
     TopBar.show();
     // 白名单

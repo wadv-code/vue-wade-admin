@@ -49,4 +49,8 @@ export class User extends BaseEntity {
   @ApiProperty({ description: '头像', required: false })
   @Column({ default: null })
   avatar: string;
+
+  @ApiProperty({ description: '邮箱', required: false })
+  @Column({ default: null })
+  email: string;
 }

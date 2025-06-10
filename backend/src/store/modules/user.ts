@@ -1,6 +1,7 @@
 import { getUserInfo } from '@/api/user';
-import { Local, Session } from '@wade/core';
+import { Session } from '@wade/core';
 import { defineStore } from 'pinia';
+import avatarImg from '@/assets/image/avatar.jpg';
 
 /**
  * 用户信息
@@ -10,22 +11,26 @@ export const useUserInfo = defineStore('user', {
   state: (): UserInfoState => ({
     userInfo: {
       id: '',
-      login_name: '',
-      avatar: '',
-      job: '',
-      name: '',
-      organization: '',
-      role: '',
-      dep_id: '',
-      org_id: '',
-      sex: '0',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      username: 'admin',
+      name: 'Wade',
+      password: '',
+      sex: 0,
+      seq: 0,
+      age: 0,
+      avatar: avatarImg,
+      remarks: '',
+      email: '853925809@qq.com',
     },
-    login_name: Local.get('login_name'),
+    username: Session.get('username'),
   }),
   actions: {
     async getUserInfo() {
       const { data } = await getUserInfo();
+      this.username = data.username;
       this.userInfo = data;
+      Session.set('username', data.username);
     },
   },
 });

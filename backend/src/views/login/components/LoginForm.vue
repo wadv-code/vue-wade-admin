@@ -33,7 +33,7 @@ const onSubmit = async () => {
     await sleep(500)
     handleToast()
     await sleep(500)
-    token.value = `${params.username}-$${params.password}`
+    token.value = `${params.username}-${params.password}`
     router.push({
       path: redirect ?? '/',
       query: { ...route.query, redirect: undefined }

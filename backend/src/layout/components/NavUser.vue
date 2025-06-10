@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useUserInfo } from '@/store/modules/user';
 import { token } from '@wade/core';
 import {
   Avatar,
@@ -27,15 +28,7 @@ import {
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
-defineProps<{
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-}>();
-
+const { userInfo } = useUserInfo();
 const { isMobile } = useSidebar();
 
 const logout = () => {
@@ -52,14 +45,14 @@ const logout = () => {
           <SidebarMenuButton size="lg"
             class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
             <Avatar class="h-8 w-8 rounded-lg">
-              <AvatarImage :src="user.avatar" :alt="user.name" />
+              <AvatarImage :src="userInfo.avatar" :alt="userInfo.name" />
               <AvatarFallback class="rounded-lg">
-                WJ
+                {{ userInfo.username }}
               </AvatarFallback>
             </Avatar>
             <div class="grid flex-1 text-left text-sm leading-tight">
-              <span class="truncate font-semibold">{{ user.name }}</span>
-              <span class="truncate text-xs">{{ user.email }}</span>
+              <span class="truncate font-semibold">{{ userInfo.name }}</span>
+              <span class="truncate text-xs">{{ userInfo.email }}</span>
             </div>
             <ChevronsUpDown class="ml-auto size-4" />
           </SidebarMenuButton>
@@ -69,14 +62,14 @@ const logout = () => {
           <DropdownMenuLabel class="p-0 font-normal">
             <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
               <Avatar class="h-8 w-8 rounded-lg">
-                <AvatarImage :src="user.avatar" :alt="user.name" />
+                <AvatarImage :src="userInfo.avatar" :alt="userInfo.name" />
                 <AvatarFallback class="rounded-lg">
-                  WJ
+                  {{ userInfo.username }}
                 </AvatarFallback>
               </Avatar>
               <div class="grid flex-1 text-left text-sm leading-tight">
-                <span class="truncate font-semibold">{{ user.name }}</span>
-                <span class="truncate text-xs">{{ user.email }}</span>
+                <span class="truncate font-semibold">{{ userInfo.name }}</span>
+                <span class="truncate text-xs">{{ userInfo.email }}</span>
               </div>
             </div>
           </DropdownMenuLabel>

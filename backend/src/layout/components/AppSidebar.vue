@@ -24,7 +24,6 @@ import NavMain from './NavMain.vue';
 import NavProjects from './NavProjects.vue';
 import NavUser from './NavUser.vue';
 import TeamSwitcher from './TeamSwitcher.vue';
-import avatarImg from "@/assets/image/avatar.jpg";
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: 'icon',
@@ -32,11 +31,6 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 
 // This is sample data.
 const data = ref({
-  user: {
-    name: 'Wade',
-    email: '853925809@qq.com',
-    avatar: avatarImg,
-  },
   teams: [
     {
       name: 'page.home.evil',
@@ -171,7 +165,7 @@ const data = ref({
       <NavProjects :projects="data.projects" />
     </SidebarContent>
     <SidebarFooter>
-      <NavUser :user="data.user" />
+      <NavUser />
     </SidebarFooter>
     <SidebarRail />
   </Sidebar>
