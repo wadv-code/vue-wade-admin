@@ -8,6 +8,10 @@
     "sendingCode": "SMS Code is sending...",
     "codeSentTo": "Code has been sent to {0}"
   },
+  "login": {
+    "welcome": "Welcome back.",
+    "tips": "Login to your Acme Inc account."
+  },
   "button": {
     "toHome": "to Home",
     "toWork": "to Workbench"

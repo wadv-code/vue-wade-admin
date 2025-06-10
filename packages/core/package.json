@@ -15,7 +15,9 @@
       "default": "./dist/index.mjs"
     }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@vueuse/core": "catalog:"
+  }
 }

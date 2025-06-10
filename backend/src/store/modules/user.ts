@@ -1,5 +1,5 @@
 import { getUserInfo } from '@/api/user';
-import { Local } from '@wade/core';
+import { Local, Session } from '@wade/core';
 import { defineStore } from 'pinia';
 
 /**

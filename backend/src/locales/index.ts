@@ -22,9 +22,9 @@ async function loadMessages(lang: SupportedLanguagesType) {
     .reduce((modules: TypedAny, modulePath: string) => {
       if (modulePath.indexOf(lang) !== -1) {
         const regex = /\/([^/]+)\.\w+$/;
-        let moduleName = modulePath.replace(/\/([^/]+)\.\w+$/, '$1');
+        let moduleName: string = modulePath.replace(/\/([^/]+)\.\w+$/, '$1');
         const match = modulePath.match(regex);
-        if (match) moduleName = match[1];
+        if (match) moduleName = match[1] as string;
         const value = modulesFiles(modulePath);
         modules[moduleName] = value || {};
         return modules;

@@ -13,7 +13,6 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-  Toaster,
   toast,
 } from '@wade/ui';
 
@@ -29,7 +28,6 @@ const openToast = () => {
 </script>
 <template>
   <div class="relative w-full h-full">
-    <Toaster />
     <RouterLink to="/">
       <Button>{{ $t('page.button.toHome') }}</Button>
     </RouterLink>

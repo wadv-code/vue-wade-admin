@@ -32,5 +32,8 @@
   "enUS": "英文",
   "upgrade": "升级至最新版本",
   "account": "账户",
-  "billing": "钱包"
+  "billing": "钱包",
+  "username": "账户",
+  "password": "密码",
+  "signUp": "注册"
 }

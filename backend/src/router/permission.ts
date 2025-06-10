@@ -1,4 +1,4 @@
-import { sleep } from '@wade/utils';
+import { token } from '@wade/core';
 import TopBar from 'topbar';
 import type { Router } from 'vue-router';
 
@@ -22,17 +22,21 @@ export const usePermission = (router: Router) => {
 
   // 路由加载前
   router.beforeEach(async (to, from, next) => {
+    console.log(from.path);
     // 显示进度条
     TopBar.show();
     // 白名单
     if (whiteList.includes(to.path)) {
       // 执行
       next();
-    } else {
+    } else if (token.value) {
       // 等待
-      await sleep(1000);
-      // 执行
       next();
+    } else {
+      next({
+        path: '/login',
+        query: { ...to.query, redirect: to.path },
+      });
     }
   });
   // 路由加载后

@@ -29,4 +29,5 @@ declare interface UserInfo {
 declare interface UserInfoState {
   userInfo: UserInfo;
   login_name: string;
+  token?: string;
 }

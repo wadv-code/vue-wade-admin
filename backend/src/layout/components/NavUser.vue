@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { token } from '@wade/core';
 import {
   Avatar,
   AvatarFallback,
@@ -38,6 +39,7 @@ defineProps<{
 const { isMobile } = useSidebar();
 
 const logout = () => {
+  token.value = ""
   router.replace('/login');
 };
 </script>

@@ -32,5 +32,8 @@
   "enUS": "English",
   "upgrade": "Upgrade to Pro",
   "account": "Account",
-  "billing": "Billing"
+  "billing": "Billing",
+  "username": "Username",
+  "password": "Password",
+  "signUp": "Sign up"
 }

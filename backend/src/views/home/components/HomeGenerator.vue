@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
   Input,
-  Toaster,
   toast,
 } from '@wade/ui';
 import { makeId, makeUuid, makeYearNumberToString } from '@wade/utils';
@@ -58,7 +57,6 @@ onMounted(() => {
 
 <template>
   <div class="content flex items-center justify-center pt-10">
-    <Toaster />
     <Card class="w-[550px]">
       <CardHeader>
         <CardTitle>{{ $t('page.home.idGenerator') }}</CardTitle>

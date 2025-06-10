@@ -8,6 +8,10 @@
     "sendingCode": "正在发送验证码",
     "codeSentTo": "验证码已发送至{0}"
   },
+  "login": {
+    "welcome": "欢迎回来",
+    "tips": "请登录你的牛马公司账户"
+  },
   "button": {
     "toHome": "去首页",
     "toWork": "去工作台"
