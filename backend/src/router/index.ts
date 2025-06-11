@@ -3,8 +3,8 @@ import {
   createWebHashHistory,
   createWebHistory,
 } from 'vue-router';
-import { usePermission } from './permission';
 import { notFoundView, routes } from './modules';
+import { usePermission } from './permission';
 
 const viteBase = '';
 const hashHistory = 'hash';

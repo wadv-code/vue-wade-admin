@@ -1,4 +1,4 @@
-import { useSessionStorage, type RemovableRef } from '@vueuse/core';
+import { type RemovableRef, useSessionStorage } from '@wade/hooks';
 
 /**
  * 根据环境设置 storage key

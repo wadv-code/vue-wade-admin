@@ -25,7 +25,9 @@
     "uuidGenerator": "生成一个UUID",
     "generateRegular": "生成一个普通ID",
     "generatorUuid": "一键生成你的UUID。",
-    "yearNumber": "生成一个年ID"
+    "yearNumber": "生成一个年ID",
+    "changeAccount": "在此处更改您的帐户。完成后单击保存。",
+    "ChangePassword": "在此处更改密码。保存后，您将注销。"
   },
   "dashboard": {
     "title": "概览",

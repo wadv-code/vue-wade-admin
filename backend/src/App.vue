@@ -3,7 +3,7 @@ import { Toaster } from '@wade/ui';
 </script>
 
 <template>
-  <Toaster />
+  <Toaster rich-colors />
   <RouterView />
 </template>
 <style>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { cn } from '@wade/utils';
+import { Loader2 } from 'lucide-vue-next';
 import { Primitive, type PrimitiveProps } from 'reka-ui';
 import type { HTMLAttributes } from 'vue';
 import { type ButtonVariants, buttonVariants } from '.';
-import { Loader2 } from 'lucide-vue-next';
 
 interface Props extends PrimitiveProps {
   variant?: ButtonVariants['variant'];

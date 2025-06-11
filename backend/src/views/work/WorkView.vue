@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { $t } from '@wade/locales';
 import {
   Button,
   Card,
@@ -17,11 +18,11 @@ import {
 } from '@wade/ui';
 
 const openToast = () => {
-  toast('Event has been created', {
-    description: 'Sunday, December 03, 2023 at 9:00 AM',
+  toast.info($t('tips.toast'), {
+    description: $t('tips.agree'),
     action: {
-      label: 'Undo',
-      onClick: () => console.log('Undo'),
+      label: $t('common.agree'),
+      onClick: () => console.log($t('common.agree')),
     },
   });
 };
@@ -31,63 +32,59 @@ const openToast = () => {
     <RouterLink to="/">
       <Button>{{ $t('page.button.toHome') }}</Button>
     </RouterLink>
-    <div
-      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-white px-10 py-5 rounded-md">
-      {{ $t('page.auth.login') }}
-    </div>
     <Button class="ml-2" @click="openToast">{{ $t('common.toast') }}</Button>
     <Tabs default-value="account" class="w-[400px] mt-2">
       <TabsList class="grid w-full grid-cols-2">
         <TabsTrigger value="account">
-          Account
+          {{ $t('common.username') }}
         </TabsTrigger>
         <TabsTrigger value="password">
-          Password
+          {{ $t("common.password") }}
         </TabsTrigger>
       </TabsList>
       <TabsContent value="account">
         <Card>
           <CardHeader>
-            <CardTitle>Account</CardTitle>
+            <CardTitle>{{ $t("common.account") }}</CardTitle>
             <CardDescription>
-              Make changes to your account here. Click save when you're done.
+              {{ $t('page.home.changeAccount') }}
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
             <div class="space-y-1">
-              <Label for="name">Name</Label>
-              <Input id="name" default-value="Pedro Duarte" />
+              <Label for="name">{{ $t('common.name') }}</Label>
+              <Input id="name" default-value="Wade" />
             </div>
             <div class="space-y-1">
-              <Label for="username">Username</Label>
-              <Input id="username" default-value="@peduarte" />
+              <Label for="username">{{ $t('common.username') }}</Label>
+              <Input id="username" default-value="123456" />
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save changes</Button>
+            <Button>{{ $t('common.save') }}</Button>
           </CardFooter>
         </Card>
       </TabsContent>
       <TabsContent value="password">
         <Card>
           <CardHeader>
-            <CardTitle>Password</CardTitle>
+            <CardTitle>{{ $t('common.password') }}</CardTitle>
             <CardDescription>
-              Change your password here. After saving, you'll be logged out.
+              {{ $t('page.home.ChangePassword') }}
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
             <div class="space-y-1">
-              <Label for="current">Current password</Label>
+              <Label for="current">{{ $t('common.currentAccount') }}</Label>
               <Input id="current" type="password" />
             </div>
             <div class="space-y-1">
-              <Label for="new">New password</Label>
+              <Label for="new">{{ $t('common.newPassword') }}</Label>
               <Input id="new" type="password" />
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save password</Button>
+            <Button>{{ $t('common.save') }}</Button>
           </CardFooter>
         </Card>
       </TabsContent>

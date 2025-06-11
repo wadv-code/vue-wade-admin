@@ -1,32 +1,26 @@
 <script setup lang="ts">
-import { Button, ThemeDark } from '@wade/ui';
+import { getUserList } from '@/api/user';
+import {
+  Button,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  ThemeDark,
+} from '@wade/ui';
 import { MoonStar, Sun } from 'lucide-vue-next';
+import { ref } from 'vue';
 import HomeGenerator from './components/HomeGenerator.vue';
-// interface User {
-//   age?: number;
-//   avatar: number;
-//   createdAt: string;
-//   id: string;
-//   name: string;
-//   password: string;
-//   remarks?: string;
-//   seq: number;
-//   sex: number;
-//   updatedAt: string;
-//   username: string;
-// }
 
-// const users = ref<User[]>([]);
+const users = ref<UserInfo[]>([]);
 
-// const fetchUsers = async () => {
-//   const { data } = await fetch('/api/user').then((res) => res.json());
-//   console.log(data);
-//   users.value = data.data;
-// };
-
-// onMounted(() => {
-//   fetchUsers();
-// });
+const fetchUsers = async () => {
+  const { data } = await getUserList();
+  users.value = data.data;
+};
 </script>
 <template>
   <div class="relative w-full h-full">
@@ -38,7 +32,7 @@ import HomeGenerator from './components/HomeGenerator.vue';
         <Button variant="secondary" @click="toggle">
           <component :is="dark ? MoonStar : Sun" />
         </Button>
-        <!-- <Button @click="fetchUsers">获取用户信息</Button> -->
+        <Button @click="fetchUsers">获取用户信息</Button>
       </div>
       <HomeGenerator></HomeGenerator>
       <Button @click="toggle" class="absolute right-0 top-0">{{ $t('tips.followMouse') }}</Button>
@@ -46,7 +40,7 @@ import HomeGenerator from './components/HomeGenerator.vue';
       <Button @click="toggle" class="absolute left-0 bottom-0">{{ $t('tips.followMouse') }}</Button>
     </ThemeDark>
 
-    <!-- <Table>
+    <Table>
       <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
@@ -68,6 +62,6 @@ import HomeGenerator from './components/HomeGenerator.vue';
           <TableCell>{{ user.createdAt }}</TableCell>
         </TableRow>
       </TableBody>
-    </Table> -->
+    </Table>
   </div>
 </template>

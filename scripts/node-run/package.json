@@ -5,9 +5,7 @@
   "scripts": {
     "stub": "pnpm unbuild --stub"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "bin": {
     "node-run": "./bin/node-run.mjs"
   },

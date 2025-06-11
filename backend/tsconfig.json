@@ -6,7 +6,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["@wade/types/pinia", "@wade/types/storage"]
+    "types": ["@wade/types/global", "@wade/types/pinia", "@wade/types/storage"]
   },
   "references": [
     {

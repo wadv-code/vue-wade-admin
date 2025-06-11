@@ -1,48 +1,57 @@
 <script setup lang="ts">
+import { useUserInfo } from '@/store/modules/user';
 import { token } from '@wade/core';
 import { $t } from '@wade/locales';
-import { Button, Card, CardContent, Input, Label, ThemeDark, toast } from '@wade/ui';
+import {
+  Button,
+  Card,
+  CardContent,
+  Input,
+  Label,
+  ThemeDark,
+  toast,
+} from '@wade/ui';
 import { sleep } from '@wade/utils';
 import { MoonStar, Sun } from 'lucide-vue-next';
 import { reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
+const { userInfo } = useUserInfo();
 
-const loading = ref(false)
+const loading = ref(false);
 const params = reactive({
   username: 'admin',
-  password: '123456'
-})
+  password: '123456',
+});
 
 const handleToast = () => {
   toast.success($t('tips.toast'), {
-    description: $t('tips.success'),
+    description: `${userInfo.name || userInfo.username} - ${$t('tips.success')}`,
     action: {
-      label: $t('tips.undo'),
-      onClick: () => console.log($t('tips.undo')),
+      label: $t('common.close'),
+      onClick: () => console.log($t('common.close')),
     },
   });
 };
 
 const onSubmit = async () => {
-  const redirect = route.query.redirect as (string | undefined);
+  const redirect = route.query.redirect as string | undefined;
   try {
-    loading.value = true
-    await sleep(500)
-    handleToast()
-    await sleep(500)
-    token.value = `${params.username}-${params.password}`
+    loading.value = true;
+    await sleep(500);
+    handleToast();
+    await sleep(500);
+    token.value = `${params.username}-${params.password}`;
     router.push({
       path: redirect ?? '/',
-      query: { ...route.query, redirect: undefined }
-    })
+      query: { ...route.query, redirect: undefined },
+    });
   } finally {
-    loading.value = false
+    loading.value = false;
   }
-}
-
+};
 </script>
 
 <template>

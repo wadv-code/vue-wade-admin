@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMagicKeys, whenever } from '@vueuse/core';
+import { useMagicKeys, whenever } from '@wade/hooks';
 import { useIsMobile } from '@wade/hooks';
 import {
   Button,

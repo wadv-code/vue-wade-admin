@@ -5,5 +5,8 @@
   "agree": "By clicking continue, you agree to our Terms of Service and Privacy Policy.",
   "toast": "Reminder information.",
   "success": "Account login successful.",
-  "undo": "Undo"
+  "undo": "Undo",
+  "reauthorized": "The certification has expired and needs to be reauthorized.",
+  "notApi": "The server has not started, you can try starting the API service.",
+  "copy": "Content copied successfully."
 }

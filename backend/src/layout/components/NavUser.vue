@@ -32,7 +32,7 @@ const { userInfo } = useUserInfo();
 const { isMobile } = useSidebar();
 
 const logout = () => {
-  token.value = ""
+  token.value = '';
   router.replace('/login');
 };
 </script>

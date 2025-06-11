@@ -35,5 +35,11 @@
   "billing": "钱包",
   "username": "账户",
   "password": "密码",
-  "signUp": "注册"
+  "signUp": "注册",
+  "undo": "取消",
+  "agree": "同意",
+  "name": "名字",
+  "save": "保存",
+  "currentAccount": "当前账户",
+  "newPassword": "新密码"
 }

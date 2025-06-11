@@ -26,7 +26,9 @@
     "uuidGenerator": "Generate a UUID",
     "generateRegular": "Generate a regular ID",
     "generatorUuid": "Generator your UUID in one-click.",
-    "yearNumber": "Generate a year ID"
+    "yearNumber": "Generate a year ID",
+    "changeAccount": "Make changes to your account here. Click save when you're done.",
+    "ChangePassword": "Change your password here. After saving, you'll be logged out."
   },
   "dashboard": {
     "title": "Dashboard",

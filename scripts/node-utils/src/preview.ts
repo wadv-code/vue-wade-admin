@@ -31,7 +31,7 @@ async function startPreview() {
     return;
   }
   consola.log(
-    `  ${colors.green('❤')}  ${colors.yellow(`Found ${roots.length} front-end packages.`)}`,
+    `  ${colors.green('❤')}  ${colors.green(`Found ${roots.length} front-end packages.`)}`,
   );
   console.log();
   const previewName = 'preview';

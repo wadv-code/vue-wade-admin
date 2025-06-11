@@ -1,9 +1,13 @@
 import { defineConfig } from '@rsbuild/core';
+import { pluginImageCompress } from '@rsbuild/plugin-image-compress';
 import { pluginVue } from '@rsbuild/plugin-vue';
 
-export default defineConfig(() => {
+export default defineConfig(({ env, command }) => {
+  console.log('env:', env, 'command:', command);
+  console.log();
+
   return {
-    plugins: [pluginVue()],
+    plugins: [pluginVue(), pluginImageCompress()],
     html: {
       title: 'Wade Backend',
       meta: {

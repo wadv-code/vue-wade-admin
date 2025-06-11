@@ -1,10 +1,14 @@
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
+import {
+  type RemovableRef,
+  breakpointsTailwind,
+  useBreakpoints,
+} from '@vueuse/core';
 
 /**
  * 是否是移动端
- * @returns { isMobile }
+ * @returns { isMobile: RemovableRef<boolean> }
  */
-export function useIsMobile() {
+export function useIsMobile(): { isMobile: RemovableRef<boolean> } {
   const breakpoints = useBreakpoints(breakpointsTailwind);
   const isMobile = breakpoints.smaller('md');
   return { isMobile };

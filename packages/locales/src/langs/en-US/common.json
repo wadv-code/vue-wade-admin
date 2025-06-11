@@ -35,5 +35,11 @@
   "billing": "Billing",
   "username": "Username",
   "password": "Password",
-  "signUp": "Sign up"
+  "signUp": "Sign up",
+  "undo": "Undo",
+  "agree": "Agree",
+  "name": "Name",
+  "save": "Save",
+  "currentAccount": "Current Account",
+  "newPassword": "New Password"
 }

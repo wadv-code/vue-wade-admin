@@ -15,8 +15,8 @@ export async function getUserInfo() {
  * 全部用户列表
  * @returns
  */
-export async function getUserList<T = unknown>() {
-  return http<T>({
+export async function getUserList() {
+  return http<HttpResponse<UserInfo[]>>({
     url: '/api/user',
     method: 'get',
   });
