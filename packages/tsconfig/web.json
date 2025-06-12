@@ -8,6 +8,7 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
     "moduleResolution": "bundler",
-    "declaration": false
+    "declaration": false,
+    "types": ["@wade/types/global", "@wade/types/pinia", "@wade/types/storage"]
   }
 }

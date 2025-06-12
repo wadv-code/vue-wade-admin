@@ -1,5 +1,5 @@
 {
-  "extends": "@wade/tsconfig/base.json",
+  "extends": "@wade/tsconfig/web.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
