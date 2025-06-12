@@ -25,25 +25,30 @@ import SearchMenu from './SearchMenu.vue';
     </div>
     <ThemeDark #="{ dark, fullscreen, toggleFullscreen, toggle }">
       <SearchMenu />
-      <Button variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
-        <Settings2 />
-      </Button>
-      <HeaderLanguage>
-        <Button variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
-          <Languages />
-        </Button>
-      </HeaderLanguage>
-      <Button @click="toggleFullscreen" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
-        <component :is="fullscreen ? Minimize : Maximize" />
-      </Button>
-      <Button @click="toggle" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
-        <component :is="dark ? MoonStar : Sun" />
-      </Button>
       <HeaderNotice #="{ toggle, open }">
-        <Button @click="toggle" variant="ghost" size="icon" class="cursor-pointer h-7 w-7">
+        <Button @click="toggle" variant="ghost" size="icon"
+          class="cursor-pointer h-7 w-7 transition-all duration-100 hover:scale-110 hover:-translate-y-0.5">
           <component :is="open ? BellRing : Bell" />
         </Button>
       </HeaderNotice>
+      <Button variant="ghost" size="icon"
+        class="cursor-pointer h-7 w-7 transition-all duration-100 hover:scale-110 hover:-translate-y-0.5">
+        <Settings2 />
+      </Button>
+      <HeaderLanguage>
+        <Button variant="ghost" size="icon"
+          class="cursor-pointer h-7 w-7 transition-all duration-100 hover:scale-110 hover:-translate-y-0.5">
+          <Languages />
+        </Button>
+      </HeaderLanguage>
+      <Button @click="toggle" variant="ghost" size="icon"
+        class="cursor-pointer h-7 w-7 transition-all duration-100 hover:scale-110 hover:-translate-y-0.5">
+        <component :is="dark ? MoonStar : Sun" />
+      </Button>
+      <Button @click="toggleFullscreen" variant="ghost" size="icon"
+        class="cursor-pointer h-7 w-7 transition-all duration-100 hover:scale-110 hover:-translate-y-0.5">
+        <component :is="fullscreen ? Minimize : Maximize" />
+      </Button>
     </ThemeDark>
   </header>
 </template>

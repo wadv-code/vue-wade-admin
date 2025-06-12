@@ -27,7 +27,8 @@
     "generatorUuid": "一键生成你的UUID。",
     "yearNumber": "生成一个年ID",
     "changeAccount": "在此处更改您的帐户。完成后单击保存。",
-    "ChangePassword": "在此处更改密码。保存后，您将注销。"
+    "ChangePassword": "在此处更改密码。保存后，您将注销。",
+    "fetchUsers": "获取用户列表"
   },
   "dashboard": {
     "title": "概览",
@@ -35,6 +36,7 @@
     "workspace": "工作台"
   },
   "tips": {
-    "menu": "菜单"
+    "menu": "菜单",
+    "clickToBusiness": "点击下方业务消息可跳转至业务页面。"
   }
 }

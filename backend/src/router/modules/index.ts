@@ -31,6 +31,7 @@ export const routes = [
     name: 'layout',
     component: LayoutView,
     children: [
+      ...notFoundView,
       {
         path: '/',
         name: 'home',
@@ -40,6 +41,11 @@ export const routes = [
         path: '/work',
         name: 'work',
         component: () => import('@/views/work/WorkView.vue'),
+      },
+      {
+        path: '/users',
+        name: 'users',
+        component: () => import('@/views/users/UsersView.vue'),
       },
     ],
   },

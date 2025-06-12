@@ -1,7 +1,7 @@
 import { getUserInfo } from '@/api/user';
-import avatarImg from '@/assets/image/avatar.jpg';
 import { Session } from '@wade/core';
 import { defineStore } from 'pinia';
+import avatarImg from '@/assets/image/avatar.jpg';
 
 /**
  * 用户信息

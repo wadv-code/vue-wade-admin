@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PageContainer from '@/components/Page/PageContainer.vue';
 import { $t } from '@wade/locales';
 import {
   Button,
@@ -28,12 +29,14 @@ const openToast = () => {
 };
 </script>
 <template>
-  <div class="relative w-full h-full">
-    <RouterLink to="/">
-      <Button>{{ $t('page.button.toHome') }}</Button>
-    </RouterLink>
-    <Button class="ml-2" @click="openToast">{{ $t('common.toast') }}</Button>
-    <Tabs default-value="account" class="w-[400px] mt-2">
+  <PageContainer>
+    <template #header>
+      <RouterLink to="/">
+        <Button>{{ $t('page.button.toHome') }}</Button>
+      </RouterLink>
+      <Button class="ml-2" @click="openToast">{{ $t('common.toast') }}</Button>
+    </template>
+    <Tabs default-value="account" class="w-[400px]">
       <TabsList class="grid w-full grid-cols-2">
         <TabsTrigger value="account">
           {{ $t('common.username') }}
@@ -89,5 +92,5 @@ const openToast = () => {
         </Card>
       </TabsContent>
     </Tabs>
-  </div>
+  </PageContainer>
 </template>

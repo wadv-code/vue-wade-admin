@@ -41,5 +41,18 @@
   "name": "名字",
   "save": "保存",
   "currentAccount": "当前账户",
-  "newPassword": "新密码"
+  "newPassword": "新密码",
+  "read": "已读",
+  "unread": "未读",
+  "all": "全部", 
+  "unauthorized": "未授权",
+  "forbidden": "禁止访问",
+  "notFound": "未找到",
+  "serverError": "服务异常",
+  "networkError": "网络异常",
+  "loginTip": "请登录后操作",
+  "loginSuccess": "登录成功",
+  "loginFailed": "登录失败",
+  "logoutSuccess": "退出登录成功",
+  "logoutFailed": "退出登录失败"
 }

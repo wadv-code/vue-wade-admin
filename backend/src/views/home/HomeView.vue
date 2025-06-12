@@ -1,67 +1,27 @@
 <script setup lang="ts">
-import { getUserList } from '@/api/user';
-import {
-  Button,
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-  ThemeDark,
-} from '@wade/ui';
+import { Button, ThemeDark } from '@wade/ui';
 import { MoonStar, Sun } from 'lucide-vue-next';
-import { ref } from 'vue';
 import HomeGenerator from './components/HomeGenerator.vue';
+import PageContainer from '@/components/Page/PageContainer.vue';
 
-const users = ref<UserInfo[]>([]);
-
-const fetchUsers = async () => {
-  const { data } = await getUserList();
-  users.value = data.data;
-};
 </script>
 <template>
-  <div class="relative w-full h-full">
-    <ThemeDark #="{ toggle, dark }">
-      <div class="flex align-middle gap-2">
-        <RouterLink to="/work">
-          <Button>{{ $t('page.button.toWork') }}</Button>
-        </RouterLink>
-        <Button variant="secondary" @click="toggle">
-          <component :is="dark ? MoonStar : Sun" />
-        </Button>
-        <Button @click="fetchUsers">获取用户信息</Button>
-      </div>
-      <HomeGenerator></HomeGenerator>
-      <Button @click="toggle" class="absolute right-0 top-0">{{ $t('tips.followMouse') }}</Button>
-      <Button @click="toggle" class="absolute right-0 bottom-0">{{ $t('tips.followMouse') }}</Button>
-      <Button @click="toggle" class="absolute left-0 bottom-0">{{ $t('tips.followMouse') }}</Button>
-    </ThemeDark>
-
-    <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>头像</TableHead>
-          <TableHead>名称</TableHead>
-          <TableHead>账户</TableHead>
-          <TableHead>年龄</TableHead>
-          <TableHead>备注</TableHead>
-          <TableHead>创建时间</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow v-for="user in users" :key="user.id">
-          <TableCell>头像</TableCell>
-          <TableCell>{{ user.name }}</TableCell>
-          <TableCell>{{ user.username }}</TableCell>
-          <TableCell>{{ user.age }}</TableCell>
-          <TableCell>{{ user.remarks }}</TableCell>
-          <TableCell>{{ user.createdAt }}</TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </div>
+  <PageContainer>
+    <template #header>
+      <ThemeDark #="{ toggle, dark }">
+        <div class="flex align-middle gap-2">
+          <RouterLink to="/work">
+            <Button>{{ $t('page.button.toWork') }}</Button>
+          </RouterLink>
+          <Button variant="secondary" @click="toggle">
+            <component :is="dark ? MoonStar : Sun" />
+          </Button>
+        </div>
+        <Button @click="toggle" class="absolute right-2 top-2">{{ $t('tips.followMouse') }}</Button>
+        <Button @click="toggle" class="absolute right-2 bottom-2">{{ $t('tips.followMouse') }}</Button>
+        <Button @click="toggle" class="absolute left-2 bottom-2">{{ $t('tips.followMouse') }}</Button>
+      </ThemeDark>
+    </template>
+    <HomeGenerator />
+  </PageContainer>
 </template>

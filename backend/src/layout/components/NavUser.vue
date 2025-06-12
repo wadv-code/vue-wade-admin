@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useUserInfo } from '@/store/modules/user';
 import { token } from '@wade/core';
+import { $t } from '@wade/locales';
 import {
   Avatar,
   AvatarFallback,
@@ -15,8 +16,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  toast,
   useSidebar,
 } from '@wade/ui';
+import { sleep } from '@wade/utils';
 import {
   BadgeCheck,
   Bell,
@@ -31,8 +34,10 @@ const router = useRouter();
 const { userInfo } = useUserInfo();
 const { isMobile } = useSidebar();
 
-const logout = () => {
+const logout = async () => {
   token.value = '';
+  toast.success($t('common.logoutSuccess'));
+  await sleep(1000);
   router.replace('/login');
 };
 </script>

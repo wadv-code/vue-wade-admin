@@ -14,6 +14,7 @@ export async function initBackEndControlRoutes() {
   if (!token.value) return false;
   // 触发初始化用户信息 pinia
   const { data } = await getUserInfo();
+  console.log('data', data);
   // // 存储接口原始路由（未处理component），根据需求选择使用
   // useRequestOldRoutes().setRequestOldRoutes(
   //   JSON.parse(JSON.stringify(business)),
