@@ -1,21 +1,27 @@
 <script setup lang="ts">
-import type { FieldProps } from './interface'
-import { cn } from '@wade/utils'
-import { Button } from '../button'
-import { Calendar } from '../calendar'
-import { FormControl, FormDescription, FormField, FormItem, FormMessage } from '../form'
-import { Popover, PopoverContent, PopoverTrigger } from '../popover'
+import { cn } from '@wade/utils';
+import { Button } from '../button';
+import { Calendar } from '../calendar';
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormMessage,
+} from '../form';
+import { Popover, PopoverContent, PopoverTrigger } from '../popover';
+import type { FieldProps } from './interface';
 
-import { DateFormatter, getLocalTimeZone } from '@internationalized/date'
-import { CalendarIcon } from 'lucide-vue-next'
-import AutoFormLabel from './AutoFormLabel.vue'
-import { beautifyObjectName, maybeBooleanishToBoolean } from './utils'
+import { DateFormatter, getLocalTimeZone } from '@internationalized/date';
+import { CalendarIcon } from 'lucide-vue-next';
+import AutoFormLabel from './AutoFormLabel.vue';
+import { beautifyObjectName, maybeBooleanishToBoolean } from './utils';
 
-defineProps<FieldProps>()
+defineProps<FieldProps>();
 
 const df = new DateFormatter('en-US', {
   dateStyle: 'long',
-})
+});
 </script>
 
 <template>

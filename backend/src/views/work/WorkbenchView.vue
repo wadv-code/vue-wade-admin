@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import PageContainer from '@/components/Page/PageContainer.vue';
 import { $t } from '@wade/locales';
-import { z, AutoForm, Button, toast, Card, CardHeader, CardDescription, CardContent, CardFooter, CardTitle } from '@wade/ui';
+import {
+  AutoForm,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  toast,
+  z,
+} from '@wade/ui';
 import WorkTabs from './components/WorkTabs.vue';
 
 const openToast = () => {
@@ -17,8 +28,7 @@ const openToast = () => {
 const formSchema = z.object({
   username: z.string().describe('Your username'),
   password: z.string().describe('Your password'),
-})
-
+});
 </script>
 <template>
   <PageContainer>

@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import PageContainer from '@/components/Page/PageContainer.vue';
 import { Button, ThemeDark } from '@wade/ui';
 import { MoonStar, Sun } from 'lucide-vue-next';
 import HomeGenerator from './components/HomeGenerator.vue';
-import PageContainer from '@/components/Page/PageContainer.vue';
-
 </script>
 <template>
   <PageContainer>

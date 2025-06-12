@@ -2,8 +2,8 @@
 import FormLabel from '../form/FormLabel.vue';
 
 defineProps<{
-  required?: boolean
-}>()
+  required?: boolean;
+}>();
 </script>
 
 <template>

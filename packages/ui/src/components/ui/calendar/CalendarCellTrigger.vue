@@ -1,17 +1,24 @@
 <script lang="ts" setup>
-import type { HTMLAttributes } from 'vue'
-import { reactiveOmit } from '@vueuse/core'
-import { CalendarCellTrigger, type CalendarCellTriggerProps, useForwardProps } from 'reka-ui'
-import { cn } from '@wade/utils'
-import { buttonVariants } from '../button'
+import { reactiveOmit } from '@vueuse/core';
+import { cn } from '@wade/utils';
+import {
+  CalendarCellTrigger,
+  type CalendarCellTriggerProps,
+  useForwardProps,
+} from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { buttonVariants } from '../button';
 
-const props = withDefaults(defineProps<CalendarCellTriggerProps & { class?: HTMLAttributes['class'] }>(), {
-  as: 'button',
-})
+const props = withDefaults(
+  defineProps<CalendarCellTriggerProps & { class?: HTMLAttributes['class'] }>(),
+  {
+    as: 'button',
+  },
+);
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class');
 
-const forwardedProps = useForwardProps(delegatedProps)
+const forwardedProps = useForwardProps(delegatedProps);
 </script>
 
 <template>

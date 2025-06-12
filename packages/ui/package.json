@@ -9,12 +9,8 @@
     "#build": "pnpm unbuild",
     "#prepublishOnly": "pnpm unbuild"
   },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "files": ["dist"],
+  "sideEffects": ["**/*.css"],
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {
@@ -33,9 +29,9 @@
     }
   },
   "dependencies": {
-    "@internationalized/date": "^3.8.2",
+    "@internationalized/date": "catalog:",
     "@tanstack/vue-table": "catalog:",
-    "@vee-validate/zod": "^4.15.1",
+    "@vee-validate/zod": "catalog:",
     "@vueuse/core": "catalog:",
     "@wade/utils": "workspace:^",
     "class-variance-authority": "catalog:",
@@ -43,9 +39,9 @@
     "lucide-vue-next": "catalog:",
     "reka-ui": "catalog:",
     "tailwind-merge": "catalog:",
-    "vee-validate": "^4.15.1",
+    "vee-validate": "catalog:",
     "vue": "catalog:",
     "vue-sonner": "catalog:",
-    "zod": "^3.25.63"
+    "zod": "catalog:"
   }
 }

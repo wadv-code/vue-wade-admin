@@ -2,16 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "noImplicitAny": false, // 关闭隐式 any 类型检查
+    "noImplicitAny": false // 关闭隐式 any 类型检查
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

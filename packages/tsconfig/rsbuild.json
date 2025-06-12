@@ -18,9 +18,5 @@
     "noUnusedParameters": true,
     "types": ["@wade/types/global", "@wade/types/pinia", "@wade/types/storage"]
   },
-  "exclude": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/.turbo/**"
-  ]
+  "exclude": ["**/node_modules/**", "**/dist/**", "**/.turbo/**"]
 }

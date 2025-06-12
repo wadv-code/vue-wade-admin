@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, ref, type RendererElement } from 'vue';
 import { SidebarInset, SidebarProvider } from '@wade/ui';
+import { type RendererElement, computed, ref } from 'vue';
+import type { RouteRecordName } from 'vue-router';
 import AppSidebar from './components/AppSidebar.vue';
 import HeaderMain from './components/header/HeaderMain.vue';
-import type { RouteRecordName } from 'vue-router';
 
 // 定义多个动画配置
 const animations = {
@@ -32,41 +32,51 @@ const getKeepAliveNames = computed(() => {
   return ['home', 'work', 'users'];
 });
 
-
 // 计算属性获取当前动画类
-const getEnterActiveClass = computed(() => animations[currentAnimation.value].enterActiveClass);
-const getEnterFromClass = computed(() => animations[currentAnimation.value].enterFromClass);
-const getEnterToClass = computed(() => animations[currentAnimation.value].enterToClass);
-const getLeaveActiveClass = computed(() => animations[currentAnimation.value].leaveActiveClass);
-const getLeaveFromClass = computed(() => animations[currentAnimation.value].leaveFromClass);
-const getLeaveToClass = computed(() => animations[currentAnimation.value].leaveToClass);
-
+const getEnterActiveClass = computed(
+  () => animations[currentAnimation.value].enterActiveClass,
+);
+const getEnterFromClass = computed(
+  () => animations[currentAnimation.value].enterFromClass,
+);
+const getEnterToClass = computed(
+  () => animations[currentAnimation.value].enterToClass,
+);
+const getLeaveActiveClass = computed(
+  () => animations[currentAnimation.value].leaveActiveClass,
+);
+const getLeaveFromClass = computed(
+  () => animations[currentAnimation.value].leaveFromClass,
+);
+const getLeaveToClass = computed(
+  () => animations[currentAnimation.value].leaveToClass,
+);
 
 /**
  * 解决动态路由name不一致，不能缓存的问题（懒得每个页面写defineOptions）
  * @param name
  * @param component
  */
-const cacheMap = new Map()
+const cacheMap = new Map();
 const wrap = (name: RouteRecordName, component: RendererElement) => {
   let cache: {
-    name: RouteRecordName,
-    render: () => RendererElement
+    name: RouteRecordName;
+    render: () => RendererElement;
   };
-  const cacheName = name
+  const cacheName = name;
   if (cacheMap.has(cacheName)) {
-    cache = cacheMap.get(cacheName)
+    cache = cacheMap.get(cacheName);
   } else {
     cache = {
       name: cacheName,
       render() {
-        return component
-      }
-    }
-    cacheMap.set(cacheName, cache)
+        return component;
+      },
+    };
+    cacheMap.set(cacheName, cache);
   }
-  return cache
-}
+  return cache;
+};
 </script>
 
 <template>

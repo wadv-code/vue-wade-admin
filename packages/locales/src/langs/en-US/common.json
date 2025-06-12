@@ -44,16 +44,15 @@
   "newPassword": "New Password",
   "read": "Read",
   "unread": "Unread",
-  "all": "all", 
+  "all": "all",
   "unauthorized": "Unauthorized",
   "forbidden": "Forbidden",
   "notFound": "Not Found",
-  "serverError":  "Server Error",
+  "serverError": "Server Error",
   "networkError": "Network Error",
   "loginTip": "Please login first",
   "loginSuccess": "Login success",
   "loginFailed": "Login failed",
   "logoutSuccess": "Logout success",
   "logoutFailed": "Logout failed"
-  
 }

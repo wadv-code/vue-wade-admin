@@ -1,18 +1,50 @@
 <script setup lang="ts">
-import { Popover, PopoverContent, PopoverTrigger, Button, Avatar, AvatarImage, AvatarFallback } from '@wade/ui';
+import avatarImg from '@/assets/image/avatar.jpg';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@wade/ui';
 import { BellOff, RefreshCcwDot } from 'lucide-vue-next';
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import avatarImg from '@/assets/image/avatar.jpg';
 
 const open = ref(false);
 const router = useRouter();
 
 // 模拟消息数据，添加 title 字段表示业务标题
 const messages = ref([
-  { id: 1, content: '新用户注册通知', time: '3小时前', isRead: false, avatar: avatarImg, link: '/new-user', title: '用户管理' },
-  { id: 2, content: '系统更新提示', time: '2天前', isRead: false, avatar: avatarImg, link: '/system-update', title: '系统维护' },
-  { id: 3, content: '订单状态变更', time: '一个礼拜前', isRead: true, avatar: avatarImg, link: '/order', title: '订单管理' },
+  {
+    id: 1,
+    content: '新用户注册通知',
+    time: '3小时前',
+    isRead: false,
+    avatar: avatarImg,
+    link: '/new-user',
+    title: '用户管理',
+  },
+  {
+    id: 2,
+    content: '系统更新提示',
+    time: '2天前',
+    isRead: false,
+    avatar: avatarImg,
+    link: '/system-update',
+    title: '系统维护',
+  },
+  {
+    id: 3,
+    content: '订单状态变更',
+    time: '一个礼拜前',
+    isRead: true,
+    avatar: avatarImg,
+    link: '/order',
+    title: '订单管理',
+  },
 ]);
 
 // 切换消息面板的显示与隐藏
@@ -22,7 +54,7 @@ const toggle = () => {
 
 // 标记消息为已读
 const markAsRead = (messageId: number) => {
-  const message = messages.value.find(msg => msg.id === messageId);
+  const message = messages.value.find((msg) => msg.id === messageId);
   if (message) {
     message.isRead = true;
   }
@@ -33,17 +65,17 @@ const markAsReadAll = () => {
   for (const msg of messages.value) {
     msg.isRead = true;
   }
-}
+};
 
 // 点击消息跳转页面
 const goToPage = (link: string) => {
-  console.log('link', link)
+  console.log('link', link);
   link && router.push(link);
   open.value = false;
 };
 
 const isReadAll = computed(() => {
-  return messages.value.every(msg => msg.isRead);
+  return messages.value.every((msg) => msg.isRead);
 });
 </script>
 <template>

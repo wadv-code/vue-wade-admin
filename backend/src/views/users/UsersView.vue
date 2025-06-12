@@ -13,16 +13,16 @@ import {
 } from '@wade/ui';
 import { ref } from 'vue';
 
-const loading = ref(false)
+const loading = ref(false);
 const users = ref<UserInfo[]>([]);
 
 const fetchUsers = async () => {
   try {
-    loading.value = true
+    loading.value = true;
     const { data } = await getUserList();
     users.value = data.data;
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 };
 </script>

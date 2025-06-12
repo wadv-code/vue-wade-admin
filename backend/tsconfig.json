@@ -1,17 +1,26 @@
 {
   "extends": "@wade/tsconfig/rsbuild.json",
   "compilerOptions": {
+    "lib": ["DOM", "ES2023"],
+    "jsx": "preserve",
+    "target": "ES2023",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "jsxImportSource": "vue",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
+      "@/*": ["./src/*"]
+    }
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "**/node_modules/**"
-  ]
+  "include": ["src"],
+  "exclude": ["**/node_modules/**"]
 }
