@@ -14,6 +14,7 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
+  Home,
   PieChart,
   Map as SetMap,
   Settings2,
@@ -28,7 +29,6 @@ import TeamSwitcher from './TeamSwitcher.vue';
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: 'icon',
 });
-
 // This is sample data.
 const data = ref({
   teams: [
@@ -50,14 +50,19 @@ const data = ref({
   ],
   navMain: [
     {
-      title: 'Playground',
-      url: '#',
+      title: 'home.home',
+      url: '/',
+      icon: Home,
+    },
+    {
+      title: 'user.user',
+      url: '/user',
       icon: SquareTerminal,
       isActive: true,
-      items: [
+      children: [
         {
-          title: 'History',
-          url: '#',
+          title: 'user.list',
+          url: '/user/users',
         },
         {
           title: 'Starred',
@@ -70,10 +75,29 @@ const data = ref({
       ],
     },
     {
-      title: 'Models',
+      title: 'work.work',
       url: '#',
       icon: Bot,
-      items: [
+      children: [
+        {
+          title: 'work.workbench',
+          url: '/work/workbench',
+        },
+        {
+          title: 'Explorer',
+          url: '#',
+        },
+        {
+          title: 'Quantum',
+          url: '#',
+        },
+      ],
+    },
+    {
+      title: 'models.models',
+      url: '#',
+      icon: Bot,
+      children: [
         {
           title: 'Genesis',
           url: '#',
@@ -89,10 +113,10 @@ const data = ref({
       ],
     },
     {
-      title: 'Documentation',
+      title: 'documentation.documentation',
       url: '#',
       icon: BookOpen,
-      items: [
+      children: [
         {
           title: 'Introduction',
           url: '#',
@@ -112,10 +136,10 @@ const data = ref({
       ],
     },
     {
-      title: 'Settings',
+      title: 'settings.settings',
       url: '#',
       icon: Settings2,
-      items: [
+      children: [
         {
           title: 'General',
           url: '#',

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { cn } from '@wade/utils';
+import type { HTMLAttributes } from 'vue'
+import { reactiveOmit } from '@vueuse/core'
 import {
   SelectContent,
   type SelectContentEmits,
@@ -7,29 +8,25 @@ import {
   SelectPortal,
   SelectViewport,
   useForwardPropsEmits,
-} from 'reka-ui';
-import { type HTMLAttributes, computed } from 'vue';
-import { SelectScrollDownButton, SelectScrollUpButton } from '.';
+} from 'reka-ui'
+import { cn } from '@wade/utils'
+import { SelectScrollDownButton, SelectScrollUpButton } from '.'
 
 defineOptions({
   inheritAttrs: false,
-});
+})
 
 const props = withDefaults(
   defineProps<SelectContentProps & { class?: HTMLAttributes['class'] }>(),
   {
     position: 'popper',
   },
-);
-const emits = defineEmits<SelectContentEmits>();
+)
+const emits = defineEmits<SelectContentEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+const delegatedProps = reactiveOmit(props, 'class')
 
-  return delegated;
-});
-
-const forwarded = useForwardPropsEmits(delegatedProps, emits);
+const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>

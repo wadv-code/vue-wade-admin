@@ -27,7 +27,7 @@ const animations = {
 };
 
 // 定义当前动画状态
-const currentAnimation = ref<keyof typeof animations>('fade-transition');
+const currentAnimation = ref<keyof typeof animations>('page-transition');
 const getKeepAliveNames = computed(() => {
   return ['home', 'work', 'users'];
 });

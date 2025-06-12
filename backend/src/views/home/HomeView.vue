@@ -10,7 +10,7 @@ import PageContainer from '@/components/Page/PageContainer.vue';
     <template #header>
       <ThemeDark #="{ toggle, dark }">
         <div class="flex align-middle gap-2">
-          <RouterLink to="/work">
+          <RouterLink to="/work/workbench">
             <Button>{{ $t('page.button.toWork') }}</Button>
           </RouterLink>
           <Button variant="secondary" @click="toggle">

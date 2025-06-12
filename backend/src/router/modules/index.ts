@@ -1,4 +1,6 @@
 import LayoutView from '@/layout/LayoutView.vue';
+import { userRoutes } from './user';
+import { workRoutes } from './work';
 
 /**
  * 定义404、401界面
@@ -37,16 +39,8 @@ export const routes = [
         name: 'home',
         component: () => import('@/views/home/HomeView.vue'),
       },
-      {
-        path: '/work',
-        name: 'work',
-        component: () => import('@/views/work/WorkView.vue'),
-      },
-      {
-        path: '/users',
-        name: 'users',
-        component: () => import('@/views/users/UsersView.vue'),
-      },
+      ...userRoutes,
+      ...workRoutes,
     ],
   },
   {
