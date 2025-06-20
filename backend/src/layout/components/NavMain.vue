@@ -38,7 +38,7 @@ defineProps<{
           class="group/collapsible">
           <SidebarMenuItem>
             <CollapsibleTrigger as-child>
-              <SidebarMenuButton :tooltip="item.title">
+              <SidebarMenuButton :tooltip="$t(item.title)">
                 <component :is="item.icon" v-if="item.icon" />
                 <span>{{ $t(item.title) }}</span>
                 <ChevronRight

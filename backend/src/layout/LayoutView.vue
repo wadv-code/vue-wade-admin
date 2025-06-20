@@ -84,7 +84,8 @@ const wrap = (name: RouteRecordName, component: RendererElement) => {
     <AppSidebar />
     <SidebarInset>
       <HeaderMain class="bg-background" />
-      <div class="flex flex-1 flex-col gap-4 m-2 bg-background rounded-md shadow max-h-screen overflow-x-hidden">
+      <div
+        class="flex flex-1 flex-col gap-4 m-2 bg-background rounded-md shadow max-h-[calc(100vh-64px)] overflow-x-hidden">
         <RouterView v-slot="{ Component, route }">
           <Transition :name="currentAnimation" mode="out-in" :enter-active-class="getEnterActiveClass"
             :enter-from-class="getEnterFromClass" :enter-to-class="getEnterToClass"
