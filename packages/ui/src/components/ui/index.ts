@@ -26,3 +26,4 @@ export * from './calendar';
 export * from './auto-form';
 export * from './radio-group';
 export * from './accordion';
+export * from './scroll-area';

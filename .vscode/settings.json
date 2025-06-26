@@ -2,10 +2,7 @@
   // 注入tailwindcss4提示
   "tailwindCSS.experimental.configFile": "packages/styles/src/css/tailwind.css",
   "tailwindCSS.experimental.classRegex": [
-    [
-      "cva\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ]
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   // 确保保存文件时自动格式化
   "editor.formatOnSave": true,
@@ -68,15 +65,10 @@
     "backend/src/locales/langs"
   ],
   "i18n-ally.pathMatcher": "{locale}/**/{namespace}.{ext}",
-  "i18n-ally.enabledParsers": [
-    "json"
-  ],
+  "i18n-ally.enabledParsers": ["json"],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.displayLanguage": "zh-CN",
-  "i18n-ally.enabledFrameworks": [
-    "vue",
-    "react"
-  ],
+  "i18n-ally.enabledFrameworks": ["vue", "react"],
   "i18n-ally.keystyle": "nested",
   "i18n-ally.sortKeys": true,
   "i18n-ally.namespace": true,
