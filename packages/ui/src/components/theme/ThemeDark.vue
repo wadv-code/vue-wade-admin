@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useDark, useFullscreen, useToggle } from '@vueuse/core';
-import { nextTick } from 'vue';
+import { useDark, useFullscreen, useToggle } from "@vueuse/core";
+import { nextTick } from "vue";
 
 const isDark = useDark();
 
@@ -10,7 +10,7 @@ const { isFullscreen, toggle: toggleFullscreen } = useFullscreen();
 function toggleTheme(event: MouseEvent) {
   const isAppearanceTransition =
     !!document.startViewTransition &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!isAppearanceTransition || !event) {
     toggleDark();
     return;
@@ -19,7 +19,7 @@ function toggleTheme(event: MouseEvent) {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, innerWidth - x),
-    Math.max(y, innerHeight - y),
+    Math.max(y, innerHeight - y)
   );
 
   const transition = document.startViewTransition(async () => {
@@ -37,15 +37,20 @@ function toggleTheme(event: MouseEvent) {
       },
       {
         duration: 450,
-        easing: 'ease-in',
+        easing: "ease-in",
         pseudoElement: isDark.value
-          ? '::view-transition-old(root)'
-          : '::view-transition-new(root)',
-      },
+          ? "::view-transition-old(root)"
+          : "::view-transition-new(root)",
+      }
     );
   });
 }
 </script>
 <template>
-  <slot :toggle="toggleTheme" :dark="isDark" :fullscreen="isFullscreen" :toggle-fullscreen="toggleFullscreen" />
+  <slot
+    :toggle="toggleTheme"
+    :dark="isDark"
+    :fullscreen="isFullscreen"
+    :toggle-fullscreen="toggleFullscreen"
+  />
 </template>
